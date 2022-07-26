@@ -1,3 +1,6 @@
 [submodule "esp_mt9m001_test"]
 	path = esp_mt9m001_test
 	url = https://github.com/zeroleaked/esp_mt9m001_test.git
+[submodule "prototypeTA"]
+	path = prototypeTA
+	url = https://github.com/zeroleaked/prototypeTA.git
