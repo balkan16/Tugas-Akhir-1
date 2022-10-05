@@ -80,7 +80,7 @@ The current version of the spectrophotometer has some features as follows:
 The proposed system consists of five subsystems which are light source, light sensor, control, user interface, and power subsystem. Its data flow diagram (DFD) can be seen in Fig. 1. The light sensor subsystem is composed of a slit, a monochromator, and an array of photodetector. The source light, which is emitted by a polychromatic light source, will be passed through the sample droplet located on an electrode of a DMF platform. The light which is not absorbed by the droplet will pass through the slit then to a monochromator. The monochromator decomposes the light into monochromatic light to be detected by the photodetector array. Each detector in the array measures the light intensity for a specific wavelength. The measurement readings will be sent to the control subsystem to be computed into absorbance values. 
 
     \begin{figure}[htbp]
-    \centerline{\includegraphics{system-dfd.png}}
+    \centerline{\includegraphics[scale=0.4]{system-dfd.png}}
     \caption{Level-1 Data Flow Diagram (DFD) of the system.}
     \label{system-dfd}
     \end{figure}
@@ -89,7 +89,7 @@ The proposed system consists of five subsystems which are light source, light se
 The light source subsystem functions to produce polychromatic light as the primary variable to be manipulated and measured by the instrument. This subsystem includes 2 modules, namely switching circuits and light sources. The process in this subsystem begins with receiving a control signal from the control subsystem to the switching circuit. The switching circuit then flows the source voltage to the lamp so that it can be lit. The polychromatic light source will illuminate and produce light with all UV-Vis frequencies within the specification. This light is then passed on to the sample for a certain period.
 
     \begin{figure}[htbp]
-    \centerline{\includegraphics{light-source-dfd.png}}
+    \centerline{\includegraphics[scale=0.5]{light-source-dfd.png}}
     \caption{DFD of the light source subsystem.}
     \label{light-source-dfd}
     \end{figure}
@@ -103,7 +103,7 @@ Different pixel of the image sensor captures the intensity of different waveleng
 The light sensor subsystem outputs, at maximum, 1280 16-bit unsigned integer values, each value representing the light intensity of certain wavelengths. 
 
     \begin{figure}[htbp]
-    \centerline{\includegraphics{light-sensor-dfd.png}}
+    \centerline{\includegraphics[scale=0.4]{light-sensor-dfd.png}}
     \caption{DFD of the light sensor subsystem.}
     \label{light-sensor-dfd}
     \end{figure}
@@ -123,7 +123,7 @@ The user interface subsystem plays a role in connecting the system and the users
 Four push buttons and a power switch are used as the input interface devices. For the display, a 3.5-inch non-touchscreen TFT LCD with ILI9488 driver is used. The configuration of buttons and non-touchscreen LCD is chosen because it fits the users who use the spectrophotometer using laboratory gloves.
 
     \begin{figure}[htbp]
-    \centerline{\includegraphics{ui-dfd.png}}
+    \centerline{\includegraphics[scale=0.4]{ui-dfd.png}}
     \caption{DFD of the user interface subsystem.}
     \label{ui-dfd}
     \end{figure}
@@ -135,7 +135,7 @@ The power subsystem enables the system to be activated by supplying power from t
 The power subsystem is activated when the user presses the power button for the first time—allowing the power to flow to the microcontroller. The microcontroller will supply power to certain sub-blocks according to user input by adjusting the whether the battery voltage is sufficient based on a specified threshold. If the battery voltage value is below the threshold or the user presses the power button again, the power supply to the entire circuit will be cut off, and the system will be disabled.
 
     \begin{figure}[htbp]
-    \centerline{\includegraphics{power-dfd.png}}
+    \centerline{\includegraphics[scale=0.6]{power-dfd.png}}
     \caption{DFD of the power subsystem.}
     \label{power-dfd}
     \end{figure}
