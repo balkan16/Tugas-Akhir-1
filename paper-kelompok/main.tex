@@ -77,7 +77,7 @@ The current version of the spectrophotometer has some features as follows:
 
 \section{Methods}
 \subsection{System Overview}
-The proposed system consists of five subsystems which are light source, light sensor, control, user interface, and power subsystem. Its data flow diagram (DFD) can be seen in Fig. 1. The light sensor subsystem is composed of a slit, a monochromator, and an array of photodetector. The source light, which is emitted by a polychromatic light source, will be passed through the sample droplet located on an electrode of a DMF platform. The light which is not absorbed by the droplet will pass through the slit then to a monochromator. The monochromator decomposes the light into monochromatic light to be detected by the photodetector array. Each detector in the array measures the light intensity for a specific wavelength. The measurement readings will be sent to the control subsystem to be computed into absorbance values. 
+The proposed system consists of five subsystems which are light source, light sensor, control, user interface, and power subsystem. Its data flow diagram (DFD) is shown in Fig. \ref{system-dfd}. The light sensor subsystem is composed of a slit, a monochromator, and an array of photodetector. The source light, which is emitted by a polychromatic light source, will be passed through the sample droplet located on an electrode of a DMF platform. The light which is not absorbed by the droplet will pass through the slit then to a monochromator. The monochromator decomposes the light into monochromatic light to be detected by the photodetector array. Each detector in the array measures the light intensity for a specific wavelength. The measurement readings will be sent to the control subsystem to be computed into absorbance values. 
 
     \begin{figure}[htbp]
     \centerline{\includegraphics[scale=0.4]{system-dfd.png}}
@@ -118,7 +118,7 @@ The subsystems in the spectrophotometer are controlled by a ESP32-S3-WROOM-1-N8 
     \end{figure}
 
 \subsection{User Interface Subsystem}
-The user interface subsystem plays a role in connecting the system and the users. This can be done by interpreting the commands given by users through the input interface devices and process it into control signals that will be sent to the control subsystem. The subsystem also has a function to display measurement data which include sample concentration values, sample absorbance spectrum, regression curves, menus, and settings. Fig. 5 shows the data flow diagram of the user interface subsystem.
+The user interface subsystem plays a role in connecting the system and the users. This can be done by interpreting the commands given by users through the input interface devices and process it into control signals that will be sent to the control subsystem. The subsystem also has a function to display measurement data which include sample concentration values, sample absorbance spectrum, regression curves, menus, and settings. Fig. \ref{ui-dfd} shows the data flow diagram of the user interface subsystem.
 
 Four push buttons and a power switch are used as the input interface devices. For the display, a 3.5-inch non-touchscreen TFT LCD with ILI9488 driver is used. The configuration of buttons and non-touchscreen LCD is chosen because it fits the users who use the spectrophotometer using laboratory gloves.
 
