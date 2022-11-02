@@ -9,40 +9,54 @@
     T\kern-.1667em\lower.7ex\hbox{E}\kern-.125emX}}
 \begin{document}
 
+\makeatletter
+\newcommand{\newlineauthors}{%
+  \end{@IEEEauthorhalign}\hfill\mbox{}\par
+  \mbox{}\hfill\begin{@IEEEauthorhalign}
+}
+\makeatother
+
 \title{Portable Visible Spectrophotometer for Glucose Microdroplet Measurements in Digital Microfluidics System}
 
 \author{\IEEEauthorblockN{Alzana Armaniar Farhani}
-\IEEEauthorblockA{\textit{School of Electrical Engineering} \\
+\IEEEauthorblockA{\textit{Department of Electrical Engineering} \\
+\textit{School of Electrical Engineering} \\
 \textit{and Informatics} \\
 \textit{Institut Teknologi Bandung}\\
 Bandung, Indonesia \\
-Email: farhanialzana@gmail.com}
+farhanialzana@gmail.com}
 \and
 \IEEEauthorblockN{Balkan Khilmi Assakandari}
-\IEEEauthorblockA{\textit{School of Electrical Engineering} \\
+\IEEEauthorblockA{\textit{Department of Electrical Engineering} \\
+\textit{School of Electrical Engineering} \\
 \textit{and Informatics} \\
 \textit{Institut Teknologi Bandung}\\
 Bandung, Indonesia \\
-Email: balkankhilmi@gmail.com}
+balkankhilmi@gmail.com}
 \and
 \IEEEauthorblockN{Anindhita Nayazirly}
-\IEEEauthorblockA{\textit{School of Electrical Engineering} \\
+\IEEEauthorblockA{\textit{Department of Electrical Engineering} \\
+\textit{School of Electrical Engineering} \\
 \textit{and Informatics} \\
 \textit{Institut Teknologi Bandung}\\
 Bandung, Indonesia \\
-Email: zirlysukarno@gmail.com}
-\and
+zirlysukarno@gmail.com}
+\newlineauthors
 \IEEEauthorblockN{Akhmadi Surawijaya}
-\IEEEauthorblockA{\textit{School of Electrical Engineering and Informatics} \\
+\IEEEauthorblockA{\textit{Department of Electrical Engineering} \\
+\textit{School of Electrical Engineering} \\
+\textit{and Informatics} \\
 \textit{Institut Teknologi Bandung}\\
 Bandung, Indonesia \\
-Email:}
+email}
 \and
 \IEEEauthorblockN{Muhammad Ogin Hasanuddin}
-\IEEEauthorblockA{\textit{School of Electrical Engineering and Informatics} \\
+\IEEEauthorblockA{\textit{Department of Electrical Engineering} \\
+\textit{School of Electrical Engineering} \\
+\textit{and Informatics} \\
 \textit{Institut Teknologi Bandung}\\
 Bandung, Indonesia \\
-Email:}
+email}
 }
 
 \maketitle
@@ -97,13 +111,13 @@ The light source subsystem functions to produce polychromatic light as the prima
 \subsection{Light Sensor Subsystem}
 The light sensor subsystem functions as a spectrometer that receives polychromatic light beam and outputs light intensities of discrete wavelengths in the form of digital data.
 Polychromatic light beam enters the sensor subsystem through a hole and gets diffracted by a transmissive diffraction grating as to spatially separate light by its wavelengths.
-The grating has a groove density of 1200 lines per millimeter, thus only the first order of diffraction is usable to separate the visible spectrum.
-The resulting ray is then recorded by Micron® Imaging MT9M001 Monochrome CMOS digital image sensor.
+The grating has a groove density of 1200 lines/mm, and the first order of diffraction is used to separate the visible spectrum.
+The resulting ray is then recorded by a CMOS image sensor (Arducam MT9M001 Monochrome Camera Module).
 Different pixel of the image sensor captures the intensity of different wavelengths ranging from 400 nanometer to 700 nanometer formatted into 10-bit unsigned integer.
-The light sensor subsystem outputs, at maximum, 1280 16-bit unsigned integer values, each value representing the light intensity of certain wavelengths. 
+The light sensor subsystem outputs, at maximum, 400 16-bit unsigned integer values, each value representing the light intensity of wavelengths in the visible spectrum range. 
 
     \begin{figure}[htbp]
-    \centerline{\includegraphics[scale=0.4]{light-sensor-dfd.png}}
+    \centerline{\includegraphics[scale=0.33]{light-sensor-dfd.png}}
     \caption{DFD of the light sensor subsystem.}
     \label{light-sensor-dfd}
     \end{figure}
@@ -123,7 +137,7 @@ The user interface subsystem plays a role in connecting the system and the users
 Four push buttons and a power switch are used as the input interface devices. For the display, a 3.5-inch non-touchscreen TFT LCD with ILI9488 driver is used. The configuration of buttons and non-touchscreen LCD is chosen because it fits the users who use the spectrophotometer using laboratory gloves.
 
     \begin{figure}[htbp]
-    \centerline{\includegraphics[scale=0.4]{ui-dfd.png}}
+    \centerline{\includegraphics[scale=0.43]{ui-dfd.png}}
     \caption{DFD of the user interface subsystem.}
     \label{ui-dfd}
     \end{figure}
@@ -135,7 +149,7 @@ The power subsystem enables the system to be activated by supplying power from t
 The power subsystem is activated when the user presses the power button for the first time—allowing the power to flow to the microcontroller. The microcontroller will supply power to certain sub-blocks according to user input by adjusting the whether the battery voltage is sufficient based on a specified threshold. If the battery voltage value is below the threshold or the user presses the power button again, the power supply to the entire circuit will be cut off, and the system will be disabled.
 
     \begin{figure}[htbp]
-    \centerline{\includegraphics[scale=0.6]{power-dfd.png}}
+    \centerline{\includegraphics[scale=0.5]{power-dfd.png}}
     \caption{DFD of the power subsystem.}
     \label{power-dfd}
     \end{figure}
