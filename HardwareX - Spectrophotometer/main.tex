@@ -1,0 +1,112 @@
+% GENERAL INFORMATION: HardwareX is an open access journal established to promote free and open source designing, building and customizing of scientific infrastructure (hardware). For more details on best practices for sharing open hardware see http://www.oshwa.org/sharing-best-practices/
+
+\documentclass[11pt, letterpaper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[margin=1in]{geometry}
+\usepackage{titlesec}
+\usepackage{tabu}
+\usepackage{enumitem}
+\usepackage{amssymb}
+\usepackage{pdflscape}
+\usepackage{svg}
+\usepackage{subcaption}
+\newlist{selectlist}{itemize}{2}
+\setlist[selectlist]{label=$\square$,leftmargin=*,noitemsep,topsep=0pt}
+\usepackage{xcolor}
+\usepackage[hidelinks]{hyperref}
+% \hypersetup{
+%      colorlinks=true,
+%      linkcolor=black,
+%      filecolor=magenta,      
+%      urlcolor=black,
+% }
+ 
+\urlstyle{same}
+
+% Set up the section label formatting
+\titleformat{\section}[block]{\hspace{1em}\bfseries}{\thesection.}{0.5em}{} 
+\titleformat{\subsection}[block]{\hspace{1em}}{\thesubsection}{0.5em}{}
+
+% setup untuk memisahkan per section-nya jadi file .tex\
+\usepackage{subfiles}
+
+% setup sitasi
+\usepackage{cite}
+%\addbibresource{references.bib}
+
+% memulai dokumen %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+
+% Create the title block
+\begin{flushleft}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{10pt}
+% \textbf{\large HardwareX article template}
+
+%Insert title
+%Max. 20 words. A good title should contain the fewest possible words that adequately describe the content of a paper.
+\textbf{Title:} SpectroDMF: An Open Source Portable Visible Spectrophotometer for Microdroplet Measurements in Digital Microfluidics
+
+%Insert Authors
+\textbf{Authors:} Akhmadi Surawijaya$^1$, Muhammad Ogin Hasanuddin$^2$, Alzana Armaniar Farhani, Balkan Khilmi Assakandari, and Anindhita Nayazirly
+
+%Insert Affiliations
+\textbf{Affiliations:}\\
+School of Electrical Engineering and Informatics, Institut Teknologi Bandung, Bandung, Indonesia;
+
+%Insert Contact Email
+%Include institutional email address of the corresponding author
+\textbf{Contact email:} $^1$moginh@staff.stei.itb.ac.id, $^2$moginh@itb.ac.id
+
+%Insert Abstract
+%Max. 200 words. Remember that the abstract is what readers see first in electronic abstracting and indexing services. This is the advertisement of your article. Make it interesting, and easy to be understood. Be accurate and specific, keep it as brief as possible.
+\textbf{Abstract:} Hippotherapy is one of the highly effective treatment methods for Cerebral Palsy (CP) rehabilitation by using horse riding activity, which is beneficial to the patient because the stimuli: horse gait which is very similar to mechanical gait in humans and also visual input from the environment. However, the need of large area, quiet environment, and high maintenance costs of the facilities lead to expensive treatment. To solve this problem, we use a store-bought horse riding simulator device, and also give visual input through a simple game and an immersive virtual environment. The device then can be put in a room in a hospital for the patient's therapy. A therapy in hospital is covered by the Indonesian healthcare, thus affordable an beneficial, especially for children with CP families with low-income socioeconomic condition. This article provides the design of the system, block diagrams, game design, build instructions, and software codes needed for building the device.
+
+%Insert Keywords
+% At least 3 keywords. There is no limit on the no. of keywords you can list. Please remember that effective keywords should not repeat words appearing in your title, and should be neither too general nor too narrow.
+\textbf{Keywords:} UV-VIS Spectrophotometry
+
+\input{sec0_spec}
+% create the main body of the paper
+\newpage
+\input{sec1_hwic}
+\input{sec2_hwdesc}
+\input{sec3_designfiles}
+\input{sec4_bom}
+\input{sec5_buildinstr}
+\input{sec6_operation}
+\input{sec7_validation}
+% \input{sec8_acknow}
+\input{sec9_interest}
+\input{sec10_rights}
+\end{flushleft}
+
+\section*{References} 
+%> Include at least one reference, to the original publication of the hardware you customized.
+%> Include other references as required. Include references to put your device in context in the literature. For more information on the reference format in HardwareX please see the Guide for Authors at: https://www.elsevier.com/journals/hardwarex/2468-0672/guide-for-authors
+
+\textit{\begin{itemize}
+\item Include at least one reference, to the original publication of the hardware you customized.
+\item Include other references as required. Include references to put your device in context in the literature. For more information on the reference format in HardwareX please see the Guide for Authors at: https://www.elsevier.com/journals/hardwarex/2468-0672/guide-for-authors
+\end{itemize}}
+
+% menampilkan referensi %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\printbibliography
+\bibliographystyle{ieeetr}
+\bibliography{references}
+
+\end{document}
+
+%> Author manuscript checklist
+%> ●	HardwareX is a journal dedicated to the exhaustive and fully open source communication of advances in scientific infrastructure. Upon submission the author declares that all information necessary to reproduce the subject of the submission (e.g. bill of materials, build instructions, calibration procedures, source files, code, and safety considerations) is communicated in full and is accessible for use under an open source license. 
+%> ●	Is the subject of the submission under an open source license? Are design files in the preferred format for making modifications? As defined by the Open Source Hardware definition. 
+%> ●	Can the hardware be reproduced with the details provided in the submission?
+%> ●	Are all relevant design files available on Mendeley Data, the Open Science Framework, or Zenodo repositories, described in the Summary of Design Files document, and clearly documented? (e.g. descriptive file names, commented code, labeled images, etc.) 
+%>      ○	If in the Open Science Framework, the repository has be registered? Instructions
+%>      ○	If in Zenodo, the repository is open access and is published? Instructions
+%>      ○	If in Mendeley Data, the repository is published or the sharable link was included in the additional information of the Editorial Submission interface? Instructions
+%> ●	Are visual instructions used when necessary?
+%> ●	Is the utility of the hardware to the scientific community? Has a specific scientific application been demonstrated using the hardware?
+%> ●	Is the performance of the hardware adequately demonstrated and characterized?
+%> ●	Are all potential safety concerns addressed?
+%> ●	For more information on the article template consult the Guide to Authors.}

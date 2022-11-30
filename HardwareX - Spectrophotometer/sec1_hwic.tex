@@ -1,0 +1,41 @@
+\section{Hardware in context}
+% masih copas dari paper dome
+
+% Cerebral palsy (CP) refers to a group of permanent motor disorders attributed to a non-progressive lesion in the immature brain \cite{Rosenbaum2007A2006}. Children with CP may have a limitation or impairment in their movements, which may disrupt their daily activities \cite{Beckung2007TheYears,Wright2008HowPalsy}. 
+
+\textcolor{red}{Hippotherapy is one of the Cerebral Palsy (CP) rehabilitation methods using a horse's movements characteristics to provide motor and sensory input to the patients \cite{Koca2015WhatHippotherapy}.
+A number researchers report positive results on randomized controlled trials and a studies of hippotherapy to support the method's effectiveness.
+Improving motor function, symmetry of muscle contraction, spasticity, posture, and walking is the benefit gained from hippotherapy \cite{Pantera2022DoesFunctioning}.}
+
+\textcolor{red}{However, hippotherapy activities are costly and challenging to conduct due to several factors. The therapy instructor has to have a horse riding instructor license and therapist qualification. They also must be able to prepare the horse and guide the patients in a session. Finding a therapist with the skill mentioned earlier is challenging in a developing country like Indonesia.
+Aside from human resource costs, horse-keeping requires massive land use for a ranch or farm, which is expensive and impossible to do in urban environments \cite{Scott2005SpecialRiding}.
+Currently, no place offers a hippotherapy session with real horses in Indonesia. The last activity reported about hippotherapy sessions in Indonesia was in 2009 \cite{Setyawan2010TerapiAutisme}, making access to real-horse hippotherapy unavailable for children with CP in Indonesia.}
+
+% solving the cost with horse riding simulator. Cite HRS simulators.
+\textcolor{red}{Some researchers suggest using a Horse Riding Simulator (HRS) instead of using actual horses because it can significantly reducing the cost of hippotherapy. An HRS device is commonly available in the market as an exercise or fitness machine.
+% cite this: hippotherapy using simulator.
+Many recent researches \cite{Temcharoensuk2015EffectTrial,Dominguez-Romero2019EffectivenessMeta-Analysis, Kim2018EquineRiding, Chinniah2020EffectsPalsy} reported that HRS usage also shows positive results for CP treatments similar to hippotherapy with a real horse.
+% what problem solved by simulator
+Using a simulator, we only need a room with all the required equipment, eliminating the need for large horse farms in rural areas. However, this setup also has several drawbacks. Children are quickly bored doing monotonous and repetitive actions in a room without fun stimuli. The room setup also loses visual stimulation from the outside environment, which usually helps motivate the children to finish the therapy session and return to the next session.}
+
+% exergaming design motivations
+\textcolor{red}{Providing fun content to the children is essential to prevent the lack of enthusiasm of the children. One of the fun activities is \textit{exergaming} or active video gaming that requires bodily movements to play \cite{Benzing2018ExergamingThreats}. 
+% benefits of exergaming.
+Exergaming also benefits children with CP by improving muscle strength \cite{Viana2021TheMeta-analysis}, balance \cite{Meyns2021ExergamingTrial}, range of motion \cite{Chen2007UseDesign}, and physical fitness \cite{Widman2006EffectivenessDysfunction} depending on the type of body movements required to control the game.
+% our design to exergaming
+In this report, we design an exergaming video game to solve the problem mentioned earlier in the form of a horse racing-like game with tasks to pick apples and avoiding obstacles. We name the game \textit{Sirkus Apel}, which means "apple circus" in Indonesian. We also develop a controller that requires the user to move their back to control the in-game horse. A case report shows that back exercises also benefit children with CP, with the subject showing excellent motor progression \cite{Novak2016PromotingReport}.}
+
+% Virtual reality motivations
+\textcolor{red}{A room setup also removes the refreshing view of a horse ranch which provides visual stimulation to the children. This problem motivates us to design the game in an immersive virtual reality (VR) environment to enhance the exergaming experience.
+% Problem with the usual VR
+However, considering the safety of the children with CP, we decide not to use the usual head-mounted display (HMD) for this purpose. The use of HMD can be hazardous for children because it obstructs their view of the environment, especially when riding an HRS device.
+% motion sickness
+Numerous researchers \cite{Farmani2018ViewpointReality,Weech2020SensoryCybersickness,Hemmerich2020VisuallyHorizon,Stauffert2020LatencyReview.,Palmisano2020CybersicknessPose} also report another problem of HMD usage: \textit{motion sickness} caused by the inconsistency between the visual input of the eyes and the user movements. This condition can cause nausea, headache, disorientation, and vomiting, which is very dangerous and uncomfortable, especially for children with CP.}
+
+% To avoid obstruction
+\textcolor{red}{Considering the problems mentioned before, we built a dome-based VR. By creating a dome-like structure, we can project the VR content to a specialized dome instead of to the HMD. Taking the VR content outside of HMD also eliminates the view obstruction problem and minimizes the risk of motion sickness \cite{Fauzi2017ImplementasiCAVE}. We built our dome-based VR using the design of iDome by Paul Bourke \cite{Bourke2009IDome:Engine}.
+% cite iDome by Paul Bourke
+The design of iDome is inspired by a planetarium semi-sphere shape. The semi-sphere is cut in half to place the users in front of the dome, not under it. This setup provides a broad immersive view without any obstruction of projection hardware but keeps the user aware of the surroundings.}
+
+% System integration.
+% We then integrate the exergaming software, VR dome, HRS machine, and all the necessary equipment to be a whole hippotherapy simulator platform illustrated in Figure \ref{Fig1SystemArchitecture}, providing children fun experiences while giving them the therapy benefit to improve their conditions.
