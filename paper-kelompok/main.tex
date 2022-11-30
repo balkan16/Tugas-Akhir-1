@@ -18,45 +18,22 @@
 
 \title{Portable Visible Spectrophotometer for Glucose Microdroplet Measurements in Digital Microfluidics System}
 
-\author{\IEEEauthorblockN{Alzana Armaniar Farhani}
+\author{\IEEEauthorblockN{
+    Alzana Armaniar Farhani\IEEEauthorrefmark{1},
+    Balkan Khilmi Assakandari\IEEEauthorrefmark{2},
+    Anindhita Nayazirly\IEEEauthorrefmark{3}, \\
+    Akhmadi Surawijaya\IEEEauthorrefmark{4},
+    Muhammad Ogin Hasanuddin\IEEEauthorrefmark{5}}
 \IEEEauthorblockA{\textit{Department of Electrical Engineering} \\
-\textit{School of Electrical Engineering} \\
-\textit{and Informatics} \\
+\textit{School of Electrical Engineering and Informatics} \\
 \textit{Institut Teknologi Bandung}\\
 Bandung, Indonesia \\
-farhanialzana@gmail.com}
-\and
-\IEEEauthorblockN{Balkan Khilmi Assakandari}
-\IEEEauthorblockA{\textit{Department of Electrical Engineering} \\
-\textit{School of Electrical Engineering} \\
-\textit{and Informatics} \\
-\textit{Institut Teknologi Bandung}\\
-Bandung, Indonesia \\
-balkankhilmi@gmail.com}
-\and
-\IEEEauthorblockN{Anindhita Nayazirly}
-\IEEEauthorblockA{\textit{Department of Electrical Engineering} \\
-\textit{School of Electrical Engineering} \\
-\textit{and Informatics} \\
-\textit{Institut Teknologi Bandung}\\
-Bandung, Indonesia \\
-zirlysukarno@gmail.com}
-\newlineauthors
-\IEEEauthorblockN{Akhmadi Surawijaya}
-\IEEEauthorblockA{\textit{Department of Electrical Engineering} \\
-\textit{School of Electrical Engineering} \\
-\textit{and Informatics} \\
-\textit{Institut Teknologi Bandung}\\
-Bandung, Indonesia \\
-email}
-\and
-\IEEEauthorblockN{Muhammad Ogin Hasanuddin}
-\IEEEauthorblockA{\textit{Department of Electrical Engineering} \\
-\textit{School of Electrical Engineering} \\
-\textit{and Informatics} \\
-\textit{Institut Teknologi Bandung}\\
-Bandung, Indonesia \\
-email}
+\IEEEauthorrefmark{1}farhanialzana@gmail.com,
+\IEEEauthorrefmark{2}balkankhilmi@gmail.com,
+\IEEEauthorrefmark{3}zirlysukarno@gmail.com,
+email,
+email
+}
 }
 
 \maketitle
@@ -146,17 +123,52 @@ Four push buttons and a power switch are used as the input interface devices. Fo
 \subsection{Power Subsystem}
 The power subsystem enables the system to be activated by supplying power from the battery to the entire electrical circuit. The battery can be recharged easily whenever the battery voltage is insufficient. The power subsystem also provides information about the battery voltage value to be displayed to the user. 
 
-The power subsystem is activated when the user presses the power button for the first time—allowing the power to flow to the microcontroller. The microcontroller will supply power to certain sub-blocks according to user input by adjusting the whether the battery voltage is sufficient based on a specified threshold. If the battery voltage value is below the threshold or the user presses the power button again, the power supply to the entire circuit will be cut off, and the system will be disabled.
-
-    \begin{figure}[htbp]
+\begin{figure}[htbp]
     \centerline{\includegraphics[scale=0.5]{power-dfd.png}}
     \caption{DFD of the power subsystem.}
     \label{power-dfd}
     \end{figure}
 
-% Pendahuluan
+The power subsystem is activated when the user presses the power button for the first time—allowing the power to flow to the microcontroller. The microcontroller will supply power to certain sub-blocks according to user input by adjusting the whether the battery voltage is sufficient based on a specified threshold. If the battery voltage value is below the threshold or the user presses the power button again, the power supply to the entire circuit will be cut off, and the system will be disabled.
+
+
 \section{Results and Discussion}
 \subsection{Accuracy}
+A glucose assay kit (Glucose (GO) Assay Kit, Sigma-Aldrich) was used to colorize glucose sample of 40 {\textmu}g/ml and 60 {\textmu}g/ml concentration.
+The resulting liquid was then dropped between two microscope slides spaced 1 mm apart as shown in Fig. \ref{mic_slide}.
+
+\begin{figure}[htbp]
+    \centerline{\includegraphics[scale=0.8]{mic_slide.png}}
+    \caption{Glucose measurement setup}
+    \label{mic_slide}
+    \end{figure}
+
+Fig.~\ref{glucose_result} shows the measurement results of the glucose experiment with manual baseline correction using linear regression.
+Peak absorbance were measured 0.155 at 519 nm for 40 {\textmu}g/ml and 0.079 at 526 nm for 60 {\textmu}g/ml.
+Absorbance for the 40 {\textmu}g/ml sample turned out higher than the 60 {\textmu}g/ml sample.
+This result does not fit the absorbance-concentration relation of the Beer-Lambert law.
+It was also observed that the 40 {\textmu}g/ml sample appeared darker for the naked eye.
+Thus, a retest of the chemical reactions were due.
+
+\begin{figure}[htbp]
+    \centerline{\includegraphics[scale=0.5]{glucose-res.png}}
+    \caption{Glucose absorbance spectrum measurement result, baseline corrected}
+    \label{glucose_result}
+    \end{figure}
+
+Aside from glucose, we have tested the spectrophotometer with food dye measurements.
+Blue, red, and yellow food dyes were mixed with water.
+The volume percentage used were 0.033\%, 0.040\%, 0.050\%, 0.067\%, and 0.100\%.
+The mixture was then dropped to the DMF cartridge as shown in Fig. \ref{dye_setup}.
+The cartridge consisted of a DMF cartridge PCB, a layer of stretched parafilm, and a layer of silicon oil underneath the droplet;
+a layer of silicon oil, a layer of stretched parafilm, and a layer of ITO above the droplet. 
+
+\begin{figure}[htbp]
+    \centerline{\includegraphics[angle=90,scale=0.12]{dye-cartridge.jpg}}
+    \caption{Food dye measurement setup}
+    \label{dye_setup}
+    \end{figure}
+
 \subsection{Repeatability}
 \subsection{Wavelength Range}
 \subsection{Device and DMF Cartridge Distance}
