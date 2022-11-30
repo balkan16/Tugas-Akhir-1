@@ -135,20 +135,15 @@ The power subsystem is activated when the user presses the power button for the 
 \section{Results and Discussion}
 \subsection{Accuracy}
 A glucose assay kit (Glucose (GO) Assay Kit, Sigma-Aldrich) was used to colorize glucose sample of 40 {\textmu}g/ml and 60 {\textmu}g/ml concentration.
-The resulting liquid was then dropped between two microscope slides spaced 1 mm apart as shown in Fig. \ref{mic_slide}.
+The resulting liquid was then dropped between two microscope slides spaced 1 mm apart to mimic the light path of the DMF cartridge.
 
-\begin{figure}[htbp]
-    \centerline{\includegraphics[scale=0.8]{mic_slide.png}}
-    \caption{Glucose measurement setup}
-    \label{mic_slide}
-    \end{figure}
-
-Fig.~\ref{glucose_result} shows the measurement results of the glucose experiment with manual baseline correction using linear regression.
+Fig.~\ref{glucose_result} shows the measurement results of the glucose experiment with baseline correction using linear regression.
+Manual baseline correction was found necessary because of a voltage fluctuation found between blank measurement and sample measurement.
 Peak absorbance were measured 0.155 at 519 nm for 40 {\textmu}g/ml and 0.079 at 526 nm for 60 {\textmu}g/ml.
 Absorbance for the 40 {\textmu}g/ml sample turned out higher than the 60 {\textmu}g/ml sample.
 This result does not fit the absorbance-concentration relation of the Beer-Lambert law.
 It was also observed that the 40 {\textmu}g/ml sample appeared darker for the naked eye.
-Thus, a retest of the chemical reactions were due.
+Thus, a retest of the chemical reactions was due.
 
 \begin{figure}[htbp]
     \centerline{\includegraphics[scale=0.5]{glucose-res.png}}
@@ -159,7 +154,7 @@ Thus, a retest of the chemical reactions were due.
 Aside from glucose, we have tested the spectrophotometer with food dye measurements.
 Blue, red, and yellow food dyes were mixed with water.
 The volume percentage used were 0.033\%, 0.040\%, 0.050\%, 0.067\%, and 0.100\%.
-The mixture was then dropped to the DMF cartridge as shown in Fig. \ref{dye_setup}.
+The samples were then dropped to the DMF cartridge as shown in Fig. \ref{dye_setup}.
 The cartridge consisted of a DMF cartridge PCB, a layer of stretched parafilm, and a layer of silicon oil underneath the droplet;
 a layer of silicon oil, a layer of stretched parafilm, and a layer of ITO above the droplet. 
 
@@ -168,6 +163,18 @@ a layer of silicon oil, a layer of stretched parafilm, and a layer of ITO above 
     \caption{Food dye measurement setup}
     \label{dye_setup}
     \end{figure}
+
+\begin{figure}[htbp]
+    \centerline{\includegraphics[scale=0.6]{dye-res.png}}
+    \caption{Food dye measurement results}
+    \label{dye_res}
+    \end{figure}
+
+Measurements of the food dye samples were regressed as shown in Fig. \ref{dye_res} to create standard curves.
+The wavelengths of which the absorbance were measured were the peak absorbances of each dye.
+An upward trend was found in accordance to the Beer-Lambert law.
+The coefficient of determination measured decreased as the wavelength decreased.
+Accuracy was expected to decrease as wavelength decreases due to weakening lamp emission and camera spectrum response at low wavelengths.
 
 \subsection{Repeatability}
 \subsection{Wavelength Range}
