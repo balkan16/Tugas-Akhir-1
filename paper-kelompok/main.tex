@@ -99,19 +99,37 @@ The light sensor subsystem outputs, at maximum, 400 16-bit unsigned integer valu
     \label{light-sensor-dfd}
     \end{figure}
 
-\subsection{Control Subsystem}
-The subsystems in the spectrophotometer are controlled by a ESP32-S3-WROOM-1-N8 microcontroller module (Espressif Systems, Shanghai, China). The task of the control subsystem is to execute the main workflow of the spectrophotometer by a FSM. The control subsystem synchronizes other subsystems, such as the light source with the light sensor when measuring light intensities. The subsystem also has non-volatile memory storage to save past absorbance measurements and concentration calibration curves.
+\subsection{Control and Processing Subsystem}
+The control and processing subsystem consists of control and data processing unit.
+Other subsystems in the spectrophotometer are controlled by a ESP32-S3-DevkitC-1 microcontroller board (Espressif Systems, China).
+The task of the control unit is to execute the main workflow of the spectrophotometer by a FSM.
+The control subsystem synchronizes other subsystems, such as the light source with the light sensor when measuring light intensities.
+The processing of data signals for measurement processes and results is a responsibility of the data processing unit.
+It converts the sensor's intensity data into an absorbance spectrum (spectrum mode) and performs linear regression to calculate the sample concentration according to the standard samples.
+
+C++ programming was used to create the control subsystem program, and the PlatformIO IDE for Microsoft Visual Studio Code was used (VSCode).
+The primary responsibility of the control unit is to execute the spectrophotometer's processes based on the designed Finite State Machine (FSM), as shown in Fig. \ref{fsm}.
 
     \begin{figure}[htbp]
-    \centerline{\includegraphics{control-dfd.png}}
-    \caption{DFD of the control subsystem.}
-    \label{control-dfd}
+    \centerline{\includegraphics{fsm.png}}
+    \caption{FSM diagram of the portable visible spectrophotometer.}
+    \label{fsm}
     \end{figure}
 
-\subsection{User Interface Subsystem}
-The user interface subsystem plays a role in connecting the system and the users. This can be done by interpreting the commands given by users through the input interface devices and process it into control signals that will be sent to the control subsystem. The subsystem also has a function to display measurement data which include sample concentration values, sample absorbance spectrum, regression curves, menus, and settings. Fig. \ref{ui-dfd} shows the data flow diagram of the user interface subsystem.
+The measurement data are stored on an external SD card that is part of the data processing device.
+The data for the absorbance spectrum and the calibration curves for the quantization mode are tabulated in a CSV-file format.
+The interface between the micro-SD card and the control system is provided by a microSD click module (MikroElektronika, Serbia).
+In order to store calibration values for absorbance measurement and quantization-mode calibration curves, the microcontroller also utilizes its non-volatile memory storage (NVS).
 
-Four push buttons and a power switch are used as the input interface devices. For the display, a 3.5-inch non-touchscreen TFT LCD with ILI9488 driver is used. The configuration of buttons and non-touchscreen LCD is chosen because it fits the users who use the spectrophotometer using laboratory gloves.
+\subsection{User Interface Subsystem}
+The user interface subsystem plays a role in connecting the system and the users.
+This can be done by interpreting the commands given by users through the input interface devices and process it into control signals that will be sent to the control subsystem.
+The subsystem also has a function to display measurement data which include sample concentration values, sample absorbance spectrum, regression curves, menus, and settings.
+Fig. \ref{ui-dfd} shows the data flow diagram of the user interface subsystem.
+
+Four push buttons and a power switch are used as the input interface devices.
+For the display, a 3.5-inch non-touchscreen TFT LCD with ILI9488 driver is used.
+The configuration of buttons and non-touchscreen LCD is chosen because it fits the users who use the spectrophotometer using laboratory gloves.
 
     \begin{figure}[htbp]
     \centerline{\includegraphics[scale=0.43]{ui-dfd.png}}
@@ -178,9 +196,44 @@ Accuracy was expected to decrease as wavelength decreases due to weakening lamp 
 
 \subsection{Repeatability}
 \subsection{Wavelength Range}
+\subsection{Resolution}
+Resolution testing is carried out by calculating the resolution of the measurement results stored on an external SD card in the form of a CSV file.
+The number of pixels needed for the absorbance spectrum measurement, which is obtained from the calibration results, is 297.
+The absorbance measurement results are stored on an external SD card with a resolution that can be calculated using the following formula:
+
+    \begin{figure}[htbp]
+    \centerline{\includegraphics[scale=0.6]{resolution-eq.png}}
+    \label{resolution-eq}
+    \end{figure}
+
 \subsection{Device and DMF Cartridge Distance}
-\subsection{Electronic Display Size}
+
 \subsection{Weight and Size}
+
+\subsection{User Interface}
+The first page of the spectrum-mode measurement instructs the user to insert the blank reference sample into the DMF system.
+The sample input page, which resembles the blank input page, will be on the next page.
+A result page with the peak wavelength and absorbance results will show up after the other subsystems have finished measuring absorbance.
+The user has the option to save the result, return to the main menu, or view the entire spectrum of the absorbance measurement.
+Fig. \ref{lcd-spectrum} illustrates how the spectrum page of the absorbance measurement is shown.
+
+    \begin{figure}[htbp]
+    \centerline{\includegraphics[scale=0.6]{lcd-spectrum.png}}
+    \label{lcd-spectrum}
+    \end{figure}
+
+Quantization-mode measurement starts with a page that displays the list of saved curves.
+Users have the option of using, removing, or adding new curves.
+The user will get a table page if they select an existing curve.
+The table consists of concentration and absorbance values of standard samples, as shown in Fig. \ref{lcd-table}.
+By moving the pointer to the desired absorbance (A) cell and clicking the OK physical button, an absorbance measurement for each concentration value should be made.
+The user will be directed to the blank and sample input page.
+The user should click the REGRESS button to calculate the concentration of the unknown sample and view the standard curve plot.
+
+    \begin{figure}[htbp]
+    \centerline{\includegraphics[scale=0.6]{lcd-table.png}}
+    \label{lcd-table}
+    \end{figure}
 
 \section{Conclusions}
 
