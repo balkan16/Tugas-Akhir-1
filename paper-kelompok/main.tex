@@ -199,12 +199,12 @@ Accuracy was expected to decrease as wavelength decreases due to weakening lamp 
 \subsection{Resolution}
 Resolution testing is carried out by calculating the resolution of the measurement results stored on an external SD card in the form of a CSV file.
 The number of pixels needed for the absorbance spectrum measurement, which is obtained from the calibration results, is 297.
-The absorbance measurement results are stored on an external SD card with a resolution that can be calculated using the following formula:
+The absorbance measurement results are stored on an external SD card with a resolution that can be calculated using (\ref{resolution}).
 
-    \begin{figure}[htbp]
-    \centerline{\includegraphics[scale=0.6]{resolution-eq.png}}
-    \label{resolution-eq}
-    \end{figure}
+\begin{equation}
+    resolution=\frac{\lambda_{max} - \lambda_{min}}{n_{pixels}}=\frac{(700 - 400)nm}{393}\approx0.77nm
+    \label{resolution}
+    \end{equation}
 
 \subsection{Device and DMF Cartridge Distance}
 
