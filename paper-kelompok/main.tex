@@ -76,6 +76,12 @@ The proposed system consists of five subsystems which are light source, light se
     \label{system-dfd}
     \end{figure}
 
+    \begin{figure}[htbp]
+    \centerline{\includegraphics[scale=0.27]{dmf-hardware-scheme.png}}
+    \caption{The main components of the proposed device.}
+    \label{dmf-hardware-scheme}
+    \end{figure}
+
 \subsection{Light Source Subsystem}
 The light source subsystem functions to produce polychromatic light as the primary variable to be manipulated and measured by the instrument. This subsystem includes 2 modules, namely switching circuits and light sources. The process in this subsystem begins with receiving a control signal from the control subsystem to the switching circuit. The switching circuit then flows the source voltage to the lamp so that it can be lit. The polychromatic light source will illuminate and produce light with all UV-Vis frequencies within the specification. This light is then passed on to the sample for a certain period.
 
@@ -141,7 +147,7 @@ The configuration of buttons and non-touchscreen LCD is chosen because it fits t
 \subsection{Power Subsystem}
 The power subsystem enables the system to be activated by supplying power from the battery to the entire electrical circuit. The battery can be recharged easily whenever the battery voltage is insufficient. The power subsystem also provides information about the battery voltage value to be displayed to the user. 
 
-\begin{figure}[htbp]
+    \begin{figure}[htbp]
     \centerline{\includegraphics[scale=0.5]{power-dfd.png}}
     \caption{DFD of the power subsystem.}
     \label{power-dfd}
@@ -149,6 +155,18 @@ The power subsystem enables the system to be activated by supplying power from t
 
 The power subsystem is activated when the user presses the power button for the first time—allowing the power to flow to the microcontroller. The microcontroller will supply power to certain sub-blocks according to user input by adjusting the whether the battery voltage is sufficient based on a specified threshold. If the battery voltage value is below the threshold or the user presses the power button again, the power supply to the entire circuit will be cut off, and the system will be disabled.
 
+\subsection{Hardware Assembly}
+Using Autodesk Fusion 360 software, the body and individual parts of the portable visible spectrophotometer were created and 3D printed.
+The primary body, the optical light path, and the lamp holder were all 3D printed components.
+Fig.~\ref{hardware} displays internal components of the device.
+A polylactic acid (PLA) filament in black was used due to the need of low light reflectance.
+Electronic parts like printed circuit boards (PCBs) and optical parts were placed inside the main body.
+
+    \begin{figure}[htbp]
+    \centerline{\includegraphics[scale=0.5]{hardware-2.jpg}}
+    \caption{Overview of the device's internal components.}
+    \label{hardware}
+    \end{figure}
 
 \section{Results and Discussion}
 \subsection{Accuracy}
@@ -163,7 +181,7 @@ This result does not fit the absorbance-concentration relation of the Beer-Lambe
 It was also observed that the 40 {\textmu}g/ml sample appeared darker for the naked eye.
 Thus, a retest of the chemical reactions was due.
 
-\begin{figure}[htbp]
+        \begin{figure}[htbp]
     \centerline{\includegraphics[scale=0.5]{glucose-res.png}}
     \caption{Glucose absorbance spectrum measurement result, baseline corrected}
     \label{glucose_result}
