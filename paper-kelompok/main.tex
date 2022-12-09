@@ -118,13 +118,13 @@ The primary responsibility of the control unit is to execute the spectrophotomet
 The absorbance \emph{A} of a particular sample is computed by the Equation (\ref{absorbance}).
 
     \begin{equation}
-    A=-\log10{T}=\log{\frac{{I_{0}}{I}}}
+    A=-\log10{T}=\log{\frac{I_{0}}{I}}
     \label{absorbance}
     \end{equation}
 
-Transmittance \emph{T} is the percentage of incident radiation that the sample transmits, \emph{I_{0}} denotes the intensity of polychromatic light entering the sample, and \emph{I} denotes the intensity of light leaving the sample;
-Absorbance is directly proportional to the path length \emph{l} through the medium and the concentration \emph{c} of the absorbing substance for monochromatic radiation.
-Beer-Lambert's law, expressed in Equation (\ref{beer-lambert}), serves as the basis for quantitative analyses using both atomic and molecular absorption measurements (\emph{\epsilon} is the molar attenuation coefficient)\cite{b4}.
+Transmittance $T$ is the percentage of incident radiation that the sample transmits, $I_0$ denotes the intensity of polychromatic light entering the sample, and $I$ denotes the intensity of light leaving the sample;
+Absorbance is directly proportional to the path length $l$ through the medium and the concentration $c$ of the absorbing substance for monochromatic radiation.
+Beer-Lambert's law, expressed in Equation (\ref{beer-lambert}), serves as the basis for quantitative analyses using both atomic and molecular absorption measurements ($\epsilon$) is the molar attenuation coefficient)\cite{b4}.
 
     \begin{equation}
     A={\epsilon}{l}{c}
@@ -139,7 +139,7 @@ As a result, in the quantization mode, a linear regression is performed to obtai
     \label{linear-eq}
     \end{equation}
 
-where m is the line's slope (gradient) and b is the constant representing the linear equation's y-intercept.
+where $m$ is the line's slope (gradient) and $b$ is the constant representing the linear equation's y-intercept.
 
 The measurement data are stored on an external SD card that is part of the data processing device.
 The data for the absorbance spectrum and the calibration curves for the quantization mode are tabulated in a CSV-file format.
@@ -233,7 +233,7 @@ As a reference, the standard deviation is also measured at a wavelength of 540 n
 The transmittance's standard deviation at 540 nm is 4.09\%. 
 
 \begin{figure}[htbp]
-    \centerline{\includegraphics[scale=0.25]{glucosetransmittanceALL.png}}
+    \centerline{\includegraphics[scale=0.5]{glucosetransmittanceALL.png}}
     \caption{Glucose 40 ug/ml Transmittance}
     \label{glucose_transmittance_all}
     \end{figure}
@@ -243,7 +243,7 @@ On average, the peak wavelength that occurs is 521.07 nm, indicated by a black l
 From this data, the standard deviation of the average wavelength is at +0.63 nm, with a maximum deviation of +0.69 nm and a minimum deviation of -1.61.
 
 \begin{figure}[htbp]
-    \centerline{\includegraphics[scale=0.25]{glucose_peakwavelength.png}}
+    \centerline{\includegraphics[scale=0.5]{glucose_peakwavelength.png}}
     \caption{Glucose 40 ug/ml Peak Wavelengths}
     \label{glucose_peak_wavelength}
     \end{figure}
@@ -296,7 +296,7 @@ The user has the option to save the result, return to the main menu, or view the
 Fig. \ref{lcd-spec} illustrates how the result and spectrum page of the absorbance measurement is shown.
 
     \begin{figure}[htbp]
-    \centerline{\includegraphics[scale=0.6]{lcd-spec.JPEG}}
+    \centerline{\includegraphics[scale=0.06]{lcd-spec.JPEG}}
     \caption{The display of the result pages of a spectrum-mode measurement}
     \label{lcd-spec}
     \end{figure}
@@ -310,7 +310,7 @@ The user will be directed to the blank and sample input page.
 The user should click the REGRESS button to calculate the concentration of the unknown sample and view the standard curve plot (Fig. \ref{lcd-conc}).
 
     \begin{figure}[htbp]
-    \centerline{\includegraphics[scale=0.6]{lcd-conc.JPEG.}}
+    \centerline{\includegraphics[scale=0.06]{lcd-conc.jpeg}}
     \caption{The display of the table page of a quantization-mode curve}
     \label{lcd-conc}
     \end{figure}
