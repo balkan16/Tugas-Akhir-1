@@ -66,7 +66,7 @@ The current version of the spectrophotometer has some features as follows:
     \item Portable (12cm x 13cm x 20cm)
 \end{itemize}
 
-\section{Methods}
+\section{Materials and Methods}
 \subsection{System Overview}
 The proposed system consists of five subsystems which are light source, light sensor, control, user interface, and power subsystem. Its data flow diagram (DFD) is shown in Fig. \ref{system-dfd}. The light sensor subsystem is composed of a slit, a monochromator, and an array of photodetector. The source light, which is emitted by a polychromatic light source, will be passed through the sample droplet located on an electrode of a DMF platform. The light which is not absorbed by the droplet will pass through the slit then to a monochromator. The monochromator decomposes the light into monochromatic light to be detected by the photodetector array. Each detector in the array measures the light intensity for a specific wavelength. The measurement readings will be sent to the control subsystem to be computed into absorbance values. 
 
@@ -98,12 +98,6 @@ The grating has a groove density of 1200 lines/mm, and the first order of diffra
 The resulting ray is then recorded by a CMOS image sensor (Arducam MT9M001 Monochrome Camera Module).
 Different pixel of the image sensor captures the intensity of different wavelengths ranging from 400 nanometer to 700 nanometer formatted into 10-bit unsigned integer.
 The light sensor subsystem outputs, at maximum, 400 16-bit unsigned integer values, each value representing the light intensity of wavelengths in the visible spectrum range. 
-
-    \begin{figure}[htbp]
-    \centerline{\includegraphics[scale=0.33]{light-sensor-dfd.png}}
-    \caption{DFD of the light sensor subsystem}
-    \label{light-sensor-dfd}
-    \end{figure}
 
 \subsection{Control and Processing Subsystem}
 The control and processing subsystem consists of control and data processing unit.
@@ -232,7 +226,7 @@ Fig. \ref{device_weight} shows that the product's weight is 0.832 kilograms.
 
 \begin{figure}[htbp]
     \centerline{\includegraphics[angle=90,scale=0.12]{SCTP_weight.jpg}}
-    \caption{Device's weight meeasurement}
+    \caption{Device's weight measurement}
     \label{device_weight}
     \end{figure}
 
