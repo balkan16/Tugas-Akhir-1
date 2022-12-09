@@ -83,13 +83,12 @@ The proposed system consists of five subsystems which are light source, light se
     \end{figure}
 
 \subsection{Light Source Subsystem}
-The light source subsystem functions to produce polychromatic light as the primary variable to be manipulated and measured by the instrument. This subsystem includes 2 modules, namely switching circuits and light sources. The process in this subsystem begins with receiving a control signal from the control subsystem to the switching circuit. The switching circuit then flows the source voltage to the lamp so that it can be lit. The polychromatic light source will illuminate and produce light with all UV-Vis frequencies within the specification. This light is then passed on to the sample for a certain period.
-
-    \begin{figure}[htbp]
-    \centerline{\includegraphics[scale=0.5]{light-source-dfd.png}}
-    \caption{DFD of the light source subsystem}
-    \label{light-source-dfd}
-    \end{figure}
+The light source subsystem functions to produce polychromatic light as the primary variable to be manipulated and measured by the instrument.
+This subsystem includes 2 modules, namely switching circuits and light sources.
+The process in this subsystem begins with receiving a control signal from the control subsystem to the switching circuit.
+The switching circuit then flows the source voltage to the lamp so that it can be lit.
+The polychromatic light source will illuminate and produce light with all UV-Vis frequencies within the specification.
+This light is then passed on to the sample for a certain period.
 
 \subsection{Light Sensor Subsystem}
 The light sensor subsystem functions as a spectrometer that receives polychromatic light beam and outputs light intensities of discrete wavelengths in the form of digital data.
@@ -115,6 +114,32 @@ The primary responsibility of the control unit is to execute the spectrophotomet
     \caption{FSM diagram of the portable visible spectrophotometer}
     \label{fsm}
     \end{figure}
+
+The absorbance \emph{A} of a particular sample is computed by the Equation (\ref{absorbance}).
+
+    \begin{equation}
+    A=-\log10{T}=\log{\frac{{I_{0}}{I}}}
+    \label{absorbance}
+    \end{equation}
+
+Transmittance \emph{T} is the percentage of incident radiation that the sample transmits, \emph{I_{0}} denotes the intensity of polychromatic light entering the sample, and \emph{I} denotes the intensity of light leaving the sample;
+Absorbance is directly proportional to the path length \emph{l} through the medium and the concentration \emph{c} of the absorbing substance for monochromatic radiation.
+Beer-Lambert's law, expressed in Equation (\ref{beer-lambert}), serves as the basis for quantitative analyses using both atomic and molecular absorption measurements (\emph{\epsilon} is the molar attenuation coefficient)\cite{b4}.
+
+    \begin{equation}
+    A={\epsilon}{l}{c}
+    \label{beer-lambert}
+    \end{equation}
+
+Beer-Lambert's law states that the concentration of a dilute solution is directly proportional to its absorbance value.
+As a result, in the quantization mode, a linear regression is performed to obtain a slope-intercept form linear equation, as follows. 
+
+    \begin{equation}
+    A={m}{c}+{b}
+    \label{linear-eq}
+    \end{equation}
+
+where m is the line's slope (gradient) and b is the constant representing the linear equation's y-intercept.
 
 The measurement data are stored on an external SD card that is part of the data processing device.
 The data for the absorbance spectrum and the calibration curves for the quantization mode are tabulated in a CSV-file format.
@@ -208,7 +233,7 @@ Resolution testing is carried out by calculating the resolution of the measureme
 The number of pixels needed for the absorbance spectrum measurement, which is obtained from the calibration results, was 297.
 The absorbance measurement results are stored on an external SD card with a resolution that can be calculated using Equation (\ref{resolution}).
 
-\begin{equation}
+    \begin{equation}
     resolution=\frac{\lambda_{max} - \lambda_{min}}{n_{pixels}}=\frac{(700 - 400)nm}{393}\approx0.77nm
     \label{resolution}
     \end{equation}
@@ -228,7 +253,6 @@ The product's weight is 0.832 kilograms.
 The dimension produced are 120 mm x 131 x 207 mm, as shown in Fig. \ref{device_dimensions}
 Product dimensions are affected by the number of components used in the system and the optical configuration used. 
 The sensor's location, diffraction grating, and light source mainly influence the product's height. 
-The battery has a size of 70 x 42 x 21 mm, which significantly affects the determination of the minimum area of the product base.
 The battery has a size of 70 x 42 x 21 mm, which significantly affects the determination of the minimum area of the product base.
 In addition, the button component with a diagonal position uses a large enough area but leaves quite a lot of remaining space.
 
@@ -280,6 +304,7 @@ Future work will focus on designing a better voltage regulation and heat insulat
 \bibitem{b1} H. V. Tran et al., “Silver nanoparticles-decorated reduced graphene oxide: A novel peroxidase-like activity nanomaterial for development of a colorimetric glucose biosensor,” Arabian Journal of Chemistry, vol. 13, no. 7, pp. 6084–6091, Jul. 2020, doi: 10.1016/j.arabjc.2020.05.008.
 \bibitem{b2} Z. Gu, M. L. Wu, B. Y. Yan, H. F. Wang, and C. Kong, “Integrated Digital Microfluidic Platform for Colorimetric Sensing of Nitrite,” ACS Omega, vol. 5, no. 19, pp. 11196–11201, May 2020, doi: 10.1021/acsomega.0c01274.
 \bibitem{b3} S. Huang and R. B. Fair, “Quantitative measurements of inorganic analytes on a digital microfluidics platform,” SN Applied Sciences, vol. 1, no. 12, Dec. 2019, doi: 10.1007/s42452-019-1693-8.
+\bibitem{b4} D. A. Skoog, F. J. Holler, and S. R. Crouch, Principles of Instrumental Analysis, 7th ed. Cengage Learning, 2016.
 \end{thebibliography}
 
 \end{document}
