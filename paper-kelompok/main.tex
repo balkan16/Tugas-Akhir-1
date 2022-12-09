@@ -101,7 +101,7 @@ The light sensor subsystem outputs, at maximum, 400 16-bit unsigned integer valu
 
 \subsection{Control and Processing Subsystem}
 The control and processing subsystem consists of control and data processing unit.
-Other subsystems in the spectrophotometer are controlled by a ESP32-S3-DevkitC-1 microcontroller board (Espressif Systems, China).
+Other subsystems in the spectrophotometer are controlled by a ESP32-S3-DevkitC-1 microcontroller board (Espressif Systems, China)/
 The task of the control unit is to execute the main workflow of the spectrophotometer by a FSM.
 The control subsystem synchronizes other subsystems, such as the light source with the light sensor when measuring light intensities.
 The processing of data signals for measurement processes and results is a responsibility of the data processing unit.
@@ -157,7 +157,7 @@ A polylactic acid (PLA) filament in black was used due to the need of low light 
 Electronic parts like printed circuit boards (PCBs) and optical parts were placed inside the main body.
 
     \begin{figure}[htbp]
-    \centerline{\includegraphics[scale=0.5]{hardware-2.jpg}}
+    \centerline{\includegraphics[scale=0.15]{hardware-2.jpg}}
     \caption{Overview of the device's internal components}
     \label{hardware}
     \end{figure}
@@ -184,19 +184,14 @@ Thus, a retest of the chemical reactions was due.
 Aside from glucose, we have tested the spectrophotometer with food dye measurements.
 Blue, red, and yellow food dyes were mixed with water.
 The volume percentage used were 0.033\%, 0.040\%, 0.050\%, 0.067\%, and 0.100\%.
-The samples were then dropped to the DMF cartridge as shown in Fig. \ref{dye_setup}.
+% The samples were then dropped to the DMF cartridge as shown in Fig. \ref{dye_setup}.
 The cartridge consisted of a DMF cartridge PCB, a layer of stretched parafilm, and a layer of silicon oil underneath the droplet;
 a layer of silicon oil, a layer of stretched parafilm, and a layer of ITO above the droplet. 
 
 \begin{figure}[htbp]
-    \centerline{\includegraphics[angle=90,scale=0.12]{dye-cartridge.jpg}}
-    \caption{Food dye measurement setup}
-    \label{dye_setup}
-    \end{figure}
-
-\begin{figure}[htbp]
     \centerline{\includegraphics[scale=0.6]{dye-res.png}}
-    \caption{Food dye measurement results}
+
+    \caption{Dye measurement results}
     \label{dye_res}
     \end{figure}
 
@@ -222,22 +217,23 @@ The absorbance measurement results are stored on an external SD card with a reso
 
 \subsection{Weight and Size}
 Weight measurement is done by placing the product on a digital scale.
-Fig. \ref{device_weight} shows that the product's weight is 0.832 kilograms.
+The product's weight is 0.832 kilograms.
 
-\begin{figure}[htbp]
-    \centerline{\includegraphics[angle=90,scale=0.12]{SCTP_weight.jpg}}
-    \caption{Device's weight measurement}
-    \label{device_weight}
-    \end{figure}
+% \begin{figure}[htbp]
+%     \centerline{\includegraphics[scale=0.12]{SCTP_weight.jpg}}
+%     \caption{Device's weight measurement}
+%     \label{device_weight}
+%     \end{figure}
 
 The dimension produced are 120 mm x 131 x 207 mm, as shown in Fig. \ref{device_dimensions}
 Product dimensions are affected by the number of components used in the system and the optical configuration used. 
 The sensor's location, diffraction grating, and light source mainly influence the product's height. 
-The battery has a size of 70 x 42 x 21 mm, which significantly affects the determination of the minimum area of ​​the product base. 
+The battery has a size of 70 x 42 x 21 mm, which significantly affects the determination of the minimum area of the product base.
+The battery has a size of 70 x 42 x 21 mm, which significantly affects the determination of the minimum area of the product base.
 In addition, the button component with a diagonal position uses a large enough area but leaves quite a lot of remaining space.
 
 \begin{figure}[htbp]
-    \centerline{\includegraphics[angle=90,scale=0.12]{SCTP_size.png}}
+    \centerline{\includegraphics[scale=0.25]{SCTP_size.png}}
     \caption{Device's dimensions}
     \label{device_dimensions}
     \end{figure}
