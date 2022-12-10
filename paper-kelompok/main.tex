@@ -126,13 +126,13 @@ The light sensor subsystem outputs, at maximum, 400 16-bit unsigned integer valu
 \subsection{Control and Processing Subsystem}
 The control and processing subsystem consists of control and data processing unit.
 Other subsystems in the spectrophotometer are controlled by a ESP32-S3-DevkitC-1 microcontroller board (Espressif Systems, China)/
-The task of the control unit is to execute the main workflow of the spectrophotometer by a FSM.
+The task of the control unit is to execute the main workflow of the spectrophotometer by a Finite State Machine (FSM).
 The control subsystem synchronizes other subsystems, such as the light source with the light sensor when measuring light intensities.
 Data processing unit's main function is to process data signals for by converting the sensor intensity data into absorbance values.
 It converts the sensor's intensity data into an absorbance spectrum (spectrum mode) and performs linear regression to calculate the sample concentration according to the standard samples.
 
 C++ programming was used to create the control subsystem program, and the PlatformIO IDE for Microsoft Visual Studio Code was used (VSCode).
-Control unit's function is to execute the spectrophotometer's processes based on the designed Finite State Machine (FSM), as shown in Fig. \ref{fsm}.
+Control unit's function is to execute the spectrophotometer's processes based on the designed FSM, as shown in Fig. \ref{fsm}.
 
     \begin{figure}[htbp]
     \centerline{\includegraphics[scale=0.35]{fsm.png}}
@@ -140,7 +140,7 @@ Control unit's function is to execute the spectrophotometer's processes based on
     \label{fsm}
     \end{figure}
 
-The absorbance \emph{A} of a particular sample is computed by the Equation (\ref{absorbance}).
+The absorbance $A$ of a particular sample is computed by the Equation (\ref{absorbance}).
 
     \begin{equation}
     A=-\log10{T}=\log{\frac{I_{0}}{I}}
