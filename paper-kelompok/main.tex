@@ -39,7 +39,13 @@ Bandung, Indonesia \\
 \maketitle
 
 \begin{abstract}
-    
+We propose a portable visible spectrophotometer with an ability to integrate with a digital microfluidic (DMF) system.
+An interface, consisted of an LCD and a set of buttons, allowed users to gather and view measurement results in a continous manner.
+The device had a dimension of 120 x 131 x 207 mm and a weight of 832 g.
+The device measured absorbance in the wavelength range of 400 to 700 nm with a resolution of 0.77 nm.
+The device was tested by assessing the accuracy and repeatability of the transmission and wavelength measurements, as well as the wavelength resolution.
+The transmittance RMSE was ±11.22\% with ±9.88 nm wavelength error.
+The device had a transmittance repeatability of ±2.58\% and wavelength repeatability of ±0.63 nm.
 \end{abstract}
 
 \begin{IEEEkeywords}
@@ -82,7 +88,7 @@ Current version of the spectrophotometer has some features as follows:
     \item Able to work in visible spectrum (400 nm to 700 nm) 
     \item Able to be integrated with a digital microfluidic platform 
     \item The measurement results can be displayed on an LCD and stored 
-    \item Portable (120 x 131 x 207 mm, 0.832 grams)
+    \item Portable (120 x 131 x 207 mm, 2 kg)
 \end{itemize}
 
 \section{Materials and Methods}
@@ -183,15 +189,19 @@ The configuration of buttons and non-touchscreen LCD is chosen because it fits t
 
 
 \subsection{Power Subsystem}
-The power subsystem enables the system to be activated by supplying power from the battery to the entire electrical circuit. The battery can be recharged easily whenever the battery voltage is insufficient. The power subsystem also provides information about the battery voltage value to be displayed to the user. 
+The power subsystem enables the system to be activated by supplying power from the battery to the entire electrical circuit. 
+The battery can be recharged with a 12V adapter whenever the battery voltage is insufficient. 
+The power subsystem also provides information about the battery voltage value to be displayed to the user. 
 
-    \begin{figure}[htbp]
+\begin{figure}[htbp]
     \centerline{\includegraphics[scale=0.3]{power-schematic.png}}
-    \caption{DFD of the power subsystem}
+    \caption{Schematic of the power subsystem}
     \label{power-dfd}
     \end{figure}
 
-The power subsystem is activated when the user presses the power button for the first time—allowing the power to flow to the microcontroller. The microcontroller will supply power to certain sub-blocks according to user input by adjusting the whether the battery voltage is sufficient based on a specified threshold. If the battery voltage value is below the threshold or the user presses the power button again, the power supply to the entire circuit will be cut off, and the system will be disabled.
+The power from the adapter is converted into 8.4V (full capacity) using a charging module when charging is needed.
+The power subsystem is activated when the user presses the power button for the first time—allowing the 8.4V to flow from the battery or the adapter(when charging) to the DC step-down module, giving 6V output to the microcontroller and other loads. 
+If the battery voltage value is below the threshold or the user presses the power button again, the power supply to the entire circuit will be cut off, and the system will be disabled.
 
 \subsection{Hardware Assembly}
 To design the casing and individual parts of the spectrophotometer, we used Autodesk Fusion 360 software.
@@ -276,7 +286,7 @@ The transmittance's standard deviation at 540 nm is 4.09\%.
 
 Based on Fig. \ref{glucose_peak_wavelength}, out of 10 measurement iterations, the maximum peak wavelength occurs at 521.76 nm, with the minimum peak wavelength at 519.46 nm.
 On average, the peak wavelength that occurs is 521.07 nm, indicated by a black line on the graph.
-From this data, the standard deviation of the average wavelength is at +0.63 nm, with a maximum deviation of +0.69 nm and a minimum deviation of -1.61.
+From this data, the standard deviation of the average wavelength is at 0.63 nm, with a minimum deviation of 0.69 nm and a minimum deviation of 1.61 nm.
 
 \begin{figure}[htbp]
     \centerline{\includegraphics[scale=0.5]{glucose_peakwavelength.png}}
@@ -346,18 +356,15 @@ The user should click the REGRESS button to calculate the concentration of the u
     \end{figure}
 
 \section{Conclusions}
-To support the study of spectrophotometry analysis in DMF platform, we describe the assembly of a portable spectrophotometer that can be integrated with a particular DMF system.
-The portability makes on-the-go research processes easier.
+To support the study of spectrophotometry analysis in DMF platform, we have proposed the assembly of a portable visible spectrophotometer that can be integrated with a particular DMF system.
 Data acquisition, storage, and user experience is made simpler by our developed portable visible spectrophotometer and a user-friendly interface.
 Measurement's accuracy of red, yellow, and blue food dyes and its repeatability demonstrated good performances in experimental validation versus commercial spectrophotometer (Evolution 220 UV-Visible, Thermo Scientific™).
 The colorimetric glucose assay (maximum of absorbance at 540 nm) measurements were comparable but quite inferior; these issues could be resolved by retesting the colorimetric reactions more thoroughly.
-Future work will focus on designing a better voltage regulation and heat insulation for the lamp, as well as designing reducing movable parts from the light path configuration.
+Future work will focus on designing a better voltage regulation and heat insulation for the lamp, as well as reducing movable parts from the light path configuration.
 
 \section*{Acknowledgement}
-This work was supported financially by Department of Electrical Engineering, Institut Teknologi Bandung.
-The authors thank Mr. Isa Anshori, from Department of Biomedical Engineering, and his research team for assistance with DMF integration and sample preparation.
-
-\section*{References}
+The authors thank Dr. Isa Anshori, from Department of Biomedical Engineering, and his research team for assistance with DMF integration and sample preparation.
+This work was funded by the Department of Electrical Engineering, Institut Teknologi Bandung.
 
 \begin{thebibliography}{00}
 \bibitem{b1} A. L. Galant, R. C. Kaufman, and J. D. Wilson, “Glucose: Detection and analysis,” Food Chemistry, vol. 188, pp. 149–160, 2015. 
