@@ -48,22 +48,39 @@ Bandung, Indonesia \\
 
 % Pendahuluan
 \section{Introduction}
-Currently, various methods detect and measure glucose concentrations in food matrices. These methods can be broadly grouped into two main categories: enzymatic approaches, such as spectrophotometric assays; and non-enzymatic instrumentation, such as HPLC systems. While the first group is glucose specific, the latter is broadly adaptable and can be used to detect not only glucose but a wide variety of other carbohydrates as well. However, the spectrophotometric test is becoming a more commonly used method for glucose detection because of its ability to detect in a shorter time and at a lower cost. Spectrophotometric tests utilize the light transmitted or reflected by a sample to perform qualitative and quantitative analysis. For qualitative analysis, the light transmitted by a sample has a unique spectrum based on the atoms or molecules contained in the sample.  
+Currently, various methods detect and measure glucose concentrations in food matrices.
+These methods can be broadly grouped into two main categories: enzymatic approaches, such as spectrophotometric assays; and non-enzymatic instrumentation, such as HPLC systems.
+While the first group is glucose specific, the latter is broadly adaptable and can be used to detect not only glucose but a wide variety of other carbohydrates as well.
+However, the spectrophotometric test is becoming a more commonly used method for glucose detection because of its ability to detect in a shorter time and at a lower cost.
+Spectrophotometric tests utilize the light transmitted or reflected by a sample to perform qualitative and quantitative analysis.
+For qualitative analysis, the light transmitted by a sample has a unique spectrum based on the atoms or molecules contained in the sample.  
 
-Meanwhile, for quantitative analysis, the absorbance level of the sample for a specific wavelength is directly proportional to the concentration of the sample. Glucose spectrophotometry test includes colorimetric measurement methods, namely measurements that involve changing the color of the sample to measure quantities such as absorbance and sample concentration. Various colorimetric methods involving reactions with different enzymes for glucose measurement are the object of research being developed to obtain colorimetric methods that are accurate, sensitive, selective, and inexpensive.  Several approaches were studied to develop a colorimetric glucose biosensor by using glucose oxidase (GOx) to oxidize glucose to gluconic acid and hydrogen peroxide (H2O2). In colorimetric assays, studies revealed that the Horseradish Peroxidase (HRP) enzyme could catalyze the reaction of H2O2 and organic substrates such as 3,3',5,5'-tetramethylbenzidine (TMB) to produce visible colors\cite{b1}. 
+Meanwhile, for quantitative analysis, the absorbance level of the sample for a specific wavelength is directly proportional to the concentration of the sample.
+Glucose spectrophotometry test includes colorimetric measurement methods, namely measurements that involve changing the color of the sample to measure quantities such as absorbance and sample concentration.
+Various colorimetric methods involving reactions with different enzymes for glucose measurement are the object of research being developed to obtain colorimetric methods that are accurate, sensitive, selective, and inexpensive.
+Several approaches were studied to develop a colorimetric glucose biosensor by using glucose oxidase (GOx) to oxidize glucose to gluconic acid and hydrogen peroxide (H2O2).
+In colorimetric assays, studies revealed that the Horseradish Peroxidase (HRP) enzyme could catalyze the reaction of H2O2 and organic substrates such as 3,3',5,5'-tetramethylbenzidine (TMB) to produce visible colors\cite{b1}. 
 
-Microfluidics offer several advantages for glucose analysis, such as reduced sample and reagent consumption, faster analysis, portability, and high compatibility with multiplexing detection means. One application called digital microfluidics (DMF) has a promising potential to operate microdroplets in portable analytical systems. The platform is based on the droplet manipulation using electrowetting-on-dielectric (EWOD) principle which applies electric potential to the control electrodes coated with a hydrophobic dielectric\cite{b2}. The DMF system mainly consists of a fluid layer located between the top and bottom plates. Nowadays, DMF technology is commonly used for various processes which include sample preparation and diagnostics\cite{b3}. Droplet mixing allows all chemical reactions to be done on chip. An optical detection system needs to be developed in order to measure the absorbance and concentration of a glucose droplet on the DMF chip. 
+Microfluidics offer several advantages for glucose analysis, such as reduced sample and reagent consumption, faster analysis, portability, and high compatibility with multiplexing detection means.
+One application called digital microfluidics (DMF) has a promising potential to operate microdroplets in portable analytical systems.
+The platform is based on the droplet manipulation using electrowetting-on-dielectric (EWOD) principle which applies electric potential to the control electrodes coated with a hydrophobic dielectric\cite{b2}.
+The DMF system mainly consists of a fluid layer located between the top and bottom plates. Nowadays, DMF technology is commonly used for various processes which include sample preparation and diagnostics\cite{b3}.
+Droplet mixing allows chemical reactions to be done on chip. An optical detection system needs to be developed in order to measure the absorbance and concentration of a glucose droplet on the DMF chip. 
 
-In this study, we present the development of a portable visible spectrophotometer, which is detachable to DMF platforms. It allows the integration with a DMF platform and can be removed if the DMF is needed for other purposes. A light will be emitted through the droplet located on the DMF chip and an array of photodetectors will collect the intensity of incident light. A program is uploaded to the system to compute the absorbance and the concentration of the sample droplet. Users can interact with the system using four input buttons and an LCD which displays the result of the measurements. 
+In this study, we present the development of a portable visible spectrophotometer, which is detachable to DMF platforms.
+It allows the integration with a DMF platform and can be removed if the DMF is needed for other purposes.
+A light will be emitted through the droplet located on the DMF chip and an array of photodetectors will collect the intensity of incident light.
+A custom program is used in the system to compute the absorbance and the concentration of the sample droplet.
+Users can interact with the system using four input buttons and an LCD which displays the result of the measurements. 
 
-The current version of the spectrophotometer has some features as follows:
+Current version of the spectrophotometer has some features as follows:
 \begin{itemize}
     \item Concentration measurement of microdroplet samples 
     \item Absorbance measurement of samples based on wavelength characteristic 
     \item Able to work in visible spectrum (400 nm to 700 nm) 
     \item Able to be integrated with a digital microfluidic platform 
     \item The measurement results can be displayed on an LCD and stored 
-    \item Portable (12cm x 13cm x 20cm)
+    \item Portable (12cm x 13cm x 20cm, 0.832 grams)
 \end{itemize}
 
 \section{Materials and Methods}
@@ -83,10 +100,10 @@ The proposed system consists of five subsystems which are light source, light se
     \end{figure}
 
 \subsection{Light Source Subsystem}
-The light source subsystem functions to produce polychromatic light as the primary variable to be manipulated and measured by the instrument.
-This subsystem includes 2 modules, namely switching circuits and light sources.
+The light source subsystem's function is to produce polychromatic light as the primary variable to be manipulated and measured by the instrument.
+This subsystem includes two modules, namely switching circuits and a lamp as the light source.
 The process in this subsystem begins with receiving a control signal from the control subsystem to the switching circuit.
-The switching circuit then flows the source voltage to the lamp so that it can be lit.
+Switching circuit is used to turn the light source on and off.
 The polychromatic light source will illuminate and produce light with all UV-Vis frequencies within the specification.
 This light is then passed on to the sample for a certain period.
 
@@ -103,11 +120,11 @@ The control and processing subsystem consists of control and data processing uni
 Other subsystems in the spectrophotometer are controlled by a ESP32-S3-DevkitC-1 microcontroller board (Espressif Systems, China)/
 The task of the control unit is to execute the main workflow of the spectrophotometer by a FSM.
 The control subsystem synchronizes other subsystems, such as the light source with the light sensor when measuring light intensities.
-The processing of data signals for measurement processes and results is a responsibility of the data processing unit.
+Data processing unit's main function is to process data signals for by converting the sensor intensity data into absorbance values.
 It converts the sensor's intensity data into an absorbance spectrum (spectrum mode) and performs linear regression to calculate the sample concentration according to the standard samples.
 
 C++ programming was used to create the control subsystem program, and the PlatformIO IDE for Microsoft Visual Studio Code was used (VSCode).
-The primary responsibility of the control unit is to execute the spectrophotometer's processes based on the designed Finite State Machine (FSM), as shown in Fig. \ref{fsm}.
+Control unit's function is to execute the spectrophotometer's processes based on the designed Finite State Machine (FSM), as shown in Fig. \ref{fsm}.
 
     \begin{figure}[htbp]
     \centerline{\includegraphics[scale=0.35]{fsm.png}}
@@ -154,7 +171,7 @@ Fig. \ref{ui-dfd} shows the data flow diagram of the user interface subsystem.
 
 Four push buttons and a power switch are used as the input interface devices.
 For the display, a 3.5-inch non-touchscreen TFT LCD with ILI9488 driver is used.
-The configuration of buttons and non-touchscreen LCD is chosen because it fits the users who use the spectrophotometer using laboratory gloves.
+The configuration of buttons and non-touchscreen LCD is chosen because it fits the users who will use the spectrophotometer using laboratory gloves.
 
     \begin{figure}[htbp]
     \centerline{\includegraphics[scale=0.43]{ui-dfd.png}}
@@ -175,10 +192,10 @@ The power subsystem enables the system to be activated by supplying power from t
 The power subsystem is activated when the user presses the power button for the first time—allowing the power to flow to the microcontroller. The microcontroller will supply power to certain sub-blocks according to user input by adjusting the whether the battery voltage is sufficient based on a specified threshold. If the battery voltage value is below the threshold or the user presses the power button again, the power supply to the entire circuit will be cut off, and the system will be disabled.
 
 \subsection{Hardware Assembly}
-Using Autodesk Fusion 360 software, the body and individual parts of the portable visible spectrophotometer were created and 3D printed.
-The primary body, the optical light path, and the lamp holder were all 3D printed components.
+To design the casing and individual parts of the spectrophotometer, we used Autodesk Fusion 360 software.
+The 3D-printed body consists of the casing, the optical light path, and the lamp holder.
 Fig.~\ref{hardware} displays internal components of the device.
-A polylactic acid (PLA) filament in black was used due to the need of low light reflectance.
+Polylactic acid (PLA) and acrylonitrile butadiene styrene (ABS) filament colored in black were used due to the need of low light reflectance.
 Electronic parts like printed circuit boards (PCBs) and optical parts were placed inside the main body.
 
     \begin{figure}[htbp]
@@ -189,12 +206,12 @@ Electronic parts like printed circuit boards (PCBs) and optical parts were place
 
 \section{Results and Discussion}
 \subsection{Accuracy}
-A glucose assay kit (Glucose (GO) Assay Kit, Sigma-Aldrich) was used to colorize glucose sample of 40 {\textmu}g/ml and 60 {\textmu}g/ml concentration.
+Glucose samples are prepared using a glucose assay kit (Glucose (GO) Assay Kit, Sigma-Aldrich) with concentration of 40 {\textmu}g/ml and 60 {\textmu}g/ml concentration.
 The resulting liquid was then dropped between two microscope slides spaced 1 mm apart to mimic the light path of the DMF cartridge.
 
 Fig.~\ref{glucose_result} shows the measurement results of the glucose experiment with baseline correction using linear regression.
 Manual baseline correction was found necessary because of a voltage fluctuation found between blank measurement and sample measurement.
-Peak absorbance were measured 0.155 at 519 nm for 40 {\textmu}g/ml and 0.079 at 526 nm for 60 {\textmu}g/ml.
+Value of 0.155 peak absorbance were detected at 519 nm for 40 {\textmu}g/ml and 0.079 at 526 nm for 60 {\textmu}g/ml.
 Absorbance for the 40 {\textmu}g/ml sample turned out higher than the 60 {\textmu}g/ml sample.
 This result does not fit the absorbance-concentration relation of the Beer-Lambert law.
 It was also observed that the 40 {\textmu}g/ml sample appeared darker for the naked eye.
@@ -257,10 +274,6 @@ From several tests, the treatment of the ITO glass layer (which has been coated 
 ITO glass should have a holder, for example, given a casing with a clamp. 
 This way, the light path length is constant. Other than that, the droplet's shape, which tends to be convex at the top, can cause a lens effect\cite{b3}.
     
-
-
-
-\subsection{Wavelength Range}
 \subsection{Resolution}
 Resolution testing is carried out by calculating the resolution of the measurement results stored on an external SD card in the form of a CSV file.
 The number of pixels needed for the absorbance spectrum measurement, which is obtained from the calibration results, was 297.
@@ -271,12 +284,10 @@ The absorbance measurement results are stored on an external SD card with a reso
     \label{resolution}
     \end{equation}
 
-\subsection{Device and DMF Cartridge Distance}
-
 \subsection{Weight and Size}
-Weight measurement is done by placing the product on a digital scale.
+Weight measurement is done by placing the device on a digital scale.
 The device's weight is 0.832 kilograms. 
-The dimension produced are 120 mm x 131 x 207 mm, as shown in Fig. \ref{device_dimensions}
+The final dimension of the spectrophotometer are 120 mm x 131 x 207 mm, as shown in Fig. \ref{device_dimensions}
 Device's dimensions are affected by the number of components used in the system and the optical configuration used. 
 The sensor's location, diffraction grating, and light source mainly influence the device's height. 
 The battery has a size of 70 x 42 x 21 mm, which significantly affects the determination of the minimum area of the base.
@@ -323,8 +334,10 @@ Measurement's accuracy of red, yellow, and blue food dyes and its repeatability 
 The colorimetric glucose assay (maximum of absorbance at 540 nm) measurements were comparable but quite inferior; these issues could be resolved by retesting the colorimetric reactions more thoroughly.
 Future work will focus on designing a better voltage regulation and heat insulation for the lamp, as well as designing reducing movable parts from the light path configuration.
 
-\section*{References}
+\section*{Acknowledgement}
 
+
+\section*{References}
 
 \begin{thebibliography}{00}
 \bibitem{b1} H. V. Tran et al., “Silver nanoparticles-decorated reduced graphene oxide: A novel peroxidase-like activity nanomaterial for development of a colorimetric glucose biosensor,” Arabian Journal of Chemistry, vol. 13, no. 7, pp. 6084–6091, Jul. 2020, doi: 10.1016/j.arabjc.2020.05.008.
