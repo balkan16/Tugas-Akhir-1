@@ -39,11 +39,11 @@ Bandung, Indonesia \\
 \maketitle
 
 \begin{abstract}
-    Instrumen yang telah dikembangkan kelompok Tugas Akhir Teknik Elektro sebelumnya adalah sebuah spektrofotometer portabel yang dapat bekerja pada spektrum gelombang ultraviolet dan cahaya tampak, atau umumnya disebut spektrofotometer UV-Vis. Spektrofotometer yang dibuat hanya dapat melakukan perhitungan intensitas cahaya secara relatif terhadap nilai intensitas tertinggi yang terukur, tidak dilakukan kalibrasi skala panjang gelombang dan tuning fungsi konversi citra. Hal ini menunjukkan bahwa pengukuran yang dilakukan masih bersifat kualitatif. Spektrofotometer yang telah dikembangkan kelompok Tugas Akhir Teknik Elektro belum memiliki kapabilitas untuk 
+    
 \end{abstract}
 
 \begin{IEEEkeywords}
-    UV-VIS Spectrophotometry
+    Spectrophotometry, Droplets, Portable, Digital microfluidics
 \end{IEEEkeywords}
 
 % Pendahuluan
@@ -82,7 +82,7 @@ Current version of the spectrophotometer has some features as follows:
     \item Able to work in visible spectrum (400 nm to 700 nm) 
     \item Able to be integrated with a digital microfluidic platform 
     \item The measurement results can be displayed on an LCD and stored 
-    \item Portable (12cm x 13cm x 20cm, 0.832 grams)
+    \item Portable (120 x 131 x 207 mm, 0.832 grams)
 \end{itemize}
 
 \section{Materials and Methods}
@@ -230,7 +230,7 @@ Blue, red, and yellow food dyes were mixed with water.
 The volume percentage used were 0.033\%, 0.040\%, 0.050\%, 0.067\%, and 0.100\%.
 % The samples were then dropped to the DMF cartridge as shown in Fig. \ref{dye_setup}.
 The cartridge consisted of a DMF cartridge PCB, a layer of stretched parafilm, and a layer of silicon oil underneath the droplet;
-a layer of silicon oil, a layer of stretched parafilm, and a layer of ITO above the droplet. 
+a layer of silicon oil, a layer of stretched parafilm, and a layer of indium-tin oxide (ITO) coated glass above the droplet. 
 
 \begin{figure}[htbp]
     \centerline{\includegraphics[scale=0.6]{dye-res.png}}
@@ -274,7 +274,7 @@ Different lamp position causes other components to block part of the light, caus
 
 From several tests, the treatment of the ITO glass layer (which has been coated with silicon oil and parafilm) also produces a different level of precision. 
 ITO glass should have a holder, for example, given a casing with a clamp. 
-This way, the light path length is constant. Other than that, the droplet's shape, which tends to be convex at the top, can cause a lens effect\cite{b3}.
+This way, the light path length is constant. Other than that, the droplet's shape, which tends to be convex at the top, can cause a lens effect\cite{b5}.
     
 \subsection{Resolution}
 Resolution testing is carried out by calculating the resolution of the measurement results stored on an external SD card in the form of a CSV file.
@@ -289,7 +289,7 @@ The absorbance measurement results are stored on an external SD card with a reso
 \subsection{Weight and Size}
 Weight measurement is done by placing the device on a digital scale.
 The device's weight is 0.832 kilograms. 
-The final dimension of the spectrophotometer are 120 mm x 131 x 207 mm, as shown in Fig. \ref{device_dimensions}
+The final dimension of the spectrophotometer are 120 x 131 x 207 mm, as shown in Fig. \ref{device_dimensions}
 Device's dimensions are affected by the number of components used in the system and the optical configuration used. 
 The sensor's location, diffraction grating, and light source mainly influence the device's height. 
 The battery has a size of 70 x 42 x 21 mm, which significantly affects the determination of the minimum area of the base.
@@ -332,12 +332,13 @@ The user should click the REGRESS button to calculate the concentration of the u
 To support the study of spectrophotometry analysis in DMF platform, we describe the assembly of a portable spectrophotometer that can be integrated with a particular DMF system.
 The portability makes on-the-go research processes easier.
 Data acquisition, storage, and user experience is made simpler by our developed portable visible spectrophotometer and a user-friendly interface.
-Measurement's accuracy of red, yellow, and blue food dyes and its repeatability demonstrated good performances in experimental validation versus commercial spectrophotometer (Evolution 220).
+Measurement's accuracy of red, yellow, and blue food dyes and its repeatability demonstrated good performances in experimental validation versus commercial spectrophotometer (Thermo Scientific™ Evolution 220).
 The colorimetric glucose assay (maximum of absorbance at 540 nm) measurements were comparable but quite inferior; these issues could be resolved by retesting the colorimetric reactions more thoroughly.
 Future work will focus on designing a better voltage regulation and heat insulation for the lamp, as well as designing reducing movable parts from the light path configuration.
 
 \section*{Acknowledgement}
-
+This work was supported financially by Department of Electrical Engineering, Institut Teknologi Bandung.
+The authors thank Mr. Isa Anshori, from Department of Biomedical Engineering, and his research team for assistance with DMF integration and sample preparation.
 
 \section*{References}
 
