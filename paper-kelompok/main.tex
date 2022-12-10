@@ -49,7 +49,7 @@ Bandung, Indonesia \\
 % Pendahuluan
 \section{Introduction}
 Currently, various methods detect and measure glucose concentrations in food matrices.
-These methods can be broadly grouped into two main categories: enzymatic approaches, such as spectrophotometric assays; and non-enzymatic instrumentation, such as HPLC systems.
+These methods can be broadly grouped into two main categories: enzymatic approaches, such as spectrophotometric assays; and non-enzymatic approaches, such as HPLC systems.
 While the first group is glucose specific, the latter is broadly adaptable and can be used to detect not only glucose but a wide variety of other carbohydrates as well\cite{b1}.
 However, the spectrophotometric test is becoming a more commonly used method for glucose detection because of its ability to detect in a shorter time and at a lower cost.
 Spectrophotometric tests utilize the light transmitted or reflected by a sample to perform qualitative and quantitative analysis.
@@ -60,7 +60,7 @@ Glucose spectrophotometry test includes colorimetric measurement methods, namely
 Various colorimetric methods involving reactions with different enzymes for glucose measurement are the object of research being developed to obtain colorimetric methods that are accurate, sensitive, selective, and inexpensive.
 There are several enzymes that take glucose as a substrate and turn it into a product or byproduct that can be measured or detected.
 In particular, the development of spectrophotometric and colorimetric glucose assays has taken advantage of the activities of glucose oxidase and hexokinase enzyme\cite{b1}.
-Several approaches were studied to develop a colorimetric glucose biosensor by using glucose oxidase (GOx) to oxidize glucose to gluconic acid and hydrogen peroxide (H_2O_2).
+Several approaches were studied to develop a colorimetric glucose biosensor by using glucose oxidase (GOx) to oxidize glucose to gluconic acid and hydrogen peroxide ($H_2O_2$).
 In colorimetric assays, studies revealed that the Horseradish Peroxidase (HRP) enzyme could catalyze the reaction of H2O2 and organic substrates such as 3,3',5,5'-tetramethylbenzidine (TMB) to produce visible colors\cite{b2}. 
 
 Microfluidics offer several advantages for glucose analysis, such as reduced sample and reagent consumption, faster analysis, portability, and high compatibility with multiplexing detection means\cite{b3,b4}.
@@ -186,7 +186,7 @@ The configuration of buttons and non-touchscreen LCD is chosen because it fits t
 The power subsystem enables the system to be activated by supplying power from the battery to the entire electrical circuit. The battery can be recharged easily whenever the battery voltage is insufficient. The power subsystem also provides information about the battery voltage value to be displayed to the user. 
 
     \begin{figure}[htbp]
-    \centerline{\includegraphics[scale=0.5]{power-dfd.png}}
+    \centerline{\includegraphics[scale=0.3]{power-schematic.png}}
     \caption{DFD of the power subsystem}
     \label{power-dfd}
     \end{figure}
@@ -208,8 +208,8 @@ Electronic parts like printed circuit boards (PCBs) and optical parts were place
 
 \section{Results and Discussion}
 \subsection{Accuracy}
-Glucose samples are prepared using a glucose assay kit (Glucose (GO) Assay Kit, Sigma-Aldrich\cite{b6}) with concentration of 40 {\textmu}g/ml and 60 {\textmu}g/ml concentration.
-The resulting liquid was then dropped between two microscope slides spaced 1 mm apart to mimic the light path of the DMF cartridge.
+Glucose samples were prepared using a glucose assay kit (Glucose (GO) Assay Kit, Sigma-Aldrich\cite{b6}) with concentration of 40 {\textmu}g/ml and 60 {\textmu}g/ml concentration.
+The resulting liquid was then dropped between two microscope slides spaced 0.5 mm apart to mimic the light path of the DMF cartridge.
 
 Fig.~\ref{glucose_result} shows the measurement results of the glucose experiment with baseline correction using linear regression.
 Manual baseline correction was found necessary because of a voltage fluctuation found between blank measurement and sample measurement.
@@ -226,11 +226,28 @@ Thus, a retest of the chemical reactions was due.
     \end{figure}
 
 Aside from glucose, we have tested the spectrophotometer with food dye measurements.
-Blue, red, and yellow food dyes were mixed with water.
-The volume percentage used were 0.033\%, 0.040\%, 0.050\%, 0.067\%, and 0.100\%.
-% The samples were then dropped to the DMF cartridge as shown in Fig. \ref{dye_setup}.
-The cartridge consisted of a DMF cartridge PCB, a layer of stretched parafilm, and a layer of silicon oil underneath the droplet;
-a layer of silicon oil, a layer of stretched parafilm, and a layer of indium-tin oxide (ITO) coated glass above the droplet. 
+Blue (630 nm peak), red (508 nm peak), and yellow (427 nm peak) food dyes were mixed with water.
+The volume percentage used were 0.033\%, 0.040\%, 0.050\%, and 0.067\%.
+The device's measurements are shown in Fig. \ref{dye_res}.
+The device's measured transmittance spectra was compared to the transmittance spectra from a commercial spectrophotometer (Evolution 220 UV-Visible, Thermo Scientific).
+The average transmittance spectrum RMSE obtained was 11.22\%.
+Peak wavelength errors were $+0.99$ nm, $-1.05$ nm, and $+29.71$ nm for blue, red, and yellow dyes respectively.
+
+The biggest error factor for transmittance was the shift in the baseline.
+The device measured numerous instances of negative absorbance.
+A negative absorbance is the result of a transmittance higher than 100\%; the blank intensity readout was higher than the sample intensity readout.
+In other words, the sensor deemed the blank (water) brighter than the sample.
+This could happen when the intensity from the light source was brighter for the sample than the blank.
+The voltage log confirmed this hypothesis.
+A blank measurement took longer time than a sample measurement.
+The longer a measurement took, the lower the power dropped, and the lower intensity was readout.
+
+The significant increase of the peak wavelength error for the yellow dye was caused by the spectrum response of the system.
+The yellow dye was evaluated at its peak absorbance wavelength of 427 nm.
+The pixel spectrum response in 400 nm is 45\% the spectrum response in 550 nm.
+Moreover, the lamp emission in 400 nm is 50\% the lamp emission in 700 nm.
+These effeciency drops resulted in low intensity readouts for blank measurements, which increased resolution and noise.
+Increasing the lamp power was not an option because the heat would damage the plastic structures of the light path. 
 
 \begin{figure}[htbp]
     \centerline{\includegraphics[scale=0.6]{dye-res.png}}
