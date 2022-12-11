@@ -40,8 +40,8 @@ Bandung, Indonesia \\
 
 \begin{abstract}
 We propose a portable visible spectrophotometer with an ability to integrate with a digital microfluidic (DMF) system.
-An interface, consisted of an LCD and a set of buttons, allowed users to gather and view measurement results in a continous manner.
-The device had a dimension of 120 x 131 x 207 mm and a weight of 832 g.
+An interface which consists of an LCD and a set of buttons allows users to gather and view measurement results in a continous manner.
+The device had a dimension of 120 x 131 x 207 mmˆ3 with the weight of 0.832 kg.
 The device measured absorbance in the wavelength range of 400 to 700 nm with a resolution of 0.77 nm.
 The device was tested by assessing the accuracy and repeatability of the transmission and wavelength measurements, as well as the wavelength resolution.
 The transmittance RMSE was ±11.22\% with ±9.88 nm wavelength error.
@@ -81,19 +81,24 @@ A light will be emitted through the droplet located on the DMF chip and an array
 A custom program is used in the system to compute the absorbance and the concentration of the sample droplet.
 Users can interact with the system using four input buttons and an LCD which displays the result of the measurements. 
 
-Current version of the spectrophotometer has some features as follows:
+The spectrophotometer was designed to satisfy several features as follows:
 \begin{itemize}
     \item Concentration measurement of microdroplet samples 
     \item Absorbance measurement of samples based on wavelength characteristic 
     \item Able to work in visible spectrum (400 nm to 700 nm) 
     \item Able to be integrated with a digital microfluidic platform 
     \item The measurement results can be displayed on an LCD and stored 
-    \item Portable (120 x 131 x 207 mm, 2 kg)
+    \item Portable (should be smaller than 420 x 300 x 180 mmˆ3 and weighs less than 2 kg)
 \end{itemize}
 
 \section{Materials and Methods}
 \subsection{System Overview}
-The proposed system consists of five subsystems which are light source, light sensor, control, user interface, and power subsystem. Its data flow diagram (DFD) is shown in Fig. \ref{system-dfd}. The light sensor subsystem is composed of a slit, a monochromator, and an array of photodetector. The source light, which is emitted by a polychromatic light source, will be passed through the sample droplet located on an electrode of a DMF platform. The light which is not absorbed by the droplet will pass through the slit then to a monochromator. The monochromator decomposes the light into monochromatic light to be detected by the photodetector array. Each detector in the array measures the light intensity for a specific wavelength. The measurement readings will be sent to the control subsystem to be computed into absorbance values. 
+The proposed system consists of five subsystems which are light source, light sensor, control and processing system, user interface, and power subsystem.
+Its data flow diagram (DFD) is shown in Fig. \ref{system-dfd}. The light sensor subsystem is composed of a slit, a monochromator, and an array of photodetector.
+The source light, which is emitted by a polychromatic light source, will be passed through the sample droplet located on an electrode of a DMF platform.
+The light which is not absorbed by the droplet will pass through the slit then to a monochromator. The monochromator decomposes the light into monochromatic light to be detected by the photodetector array.
+Each detector in the array measures the light intensity for a specific wavelength.
+The measurement readings will be sent to the control subsystem to be computed into absorbance values. 
 
     \begin{figure}[htbp]
     \centerline{\includegraphics[scale=0.27]{system-dfd.png}}
@@ -119,7 +124,7 @@ This light is then passed on to the sample for a certain period.
 The light sensor subsystem functions as a spectrometer that receives polychromatic light beam and outputs light intensities of discrete wavelengths in the form of digital data.
 Polychromatic light beam enters the sensor subsystem through a hole and gets diffracted by a transmissive diffraction grating as to spatially separate light by its wavelengths.
 The grating has a groove density of 1200 lines/mm, and the first order of diffraction is used to separate the visible spectrum.
-The resulting ray is then recorded by a CMOS image sensor (Arducam MT9M001 Monochrome Camera Module).
+The diffracted ray is then recorded by a CMOS image sensor (Arducam MT9M001 Monochrome Camera Module).
 Different pixel of the image sensor captures the intensity of different wavelengths ranging from 400 nanometer to 700 nanometer formatted into 10-bit unsigned integer.
 The light sensor subsystem outputs, at maximum, 400 16-bit unsigned integer values, each value representing the light intensity of wavelengths in the visible spectrum range. 
 
@@ -132,7 +137,7 @@ Data processing unit's main function is to process data signals for by convertin
 It converts the sensor's intensity data into an absorbance spectrum (spectrum mode) and performs linear regression to calculate the sample concentration according to the standard samples.
 
 C++ programming was used to create the control subsystem program, and the PlatformIO IDE for Microsoft Visual Studio Code was used (VSCode).
-Control unit's function is to execute the spectrophotometer's processes based on the designed FSM, as shown in Fig. \ref{fsm}.
+Control unit's function is to execute the spectrophotometer's processes based on the designed FSM as shown in Fig. \ref{fsm}.
 
     \begin{figure}[htbp]
     \centerline{\includegraphics[scale=0.35]{fsm.png}}
@@ -219,7 +224,7 @@ Electronic parts like printed circuit boards (PCBs) and optical parts were place
 \section{Results and Discussion}
 \subsection{Accuracy}
 Glucose samples were prepared using a glucose assay kit (Glucose (GO) Assay Kit, Sigma-Aldrich\cite{b7}) with concentration of 40 {\textmu}g/ml and 60 {\textmu}g/ml.
-The resulting liquid was then dropped between two microscope slides spaced 0.5 mm apart to mimic the light path of the DMF cartridge.
+The resulting liquid was then placed between two microscope slides spaced 0.5 mm apart to mimic the light path of the DMF cartridge.
 
 Fig.~\ref{glucose_result} shows the measurement results of the glucose experiment with baseline correction using linear regression.
 Manual baseline correction was found necessary because of a voltage fluctuation found between blank measurement and sample measurement.
@@ -297,12 +302,12 @@ From this data, the standard deviation of the average wavelength is at 0.63 nm, 
 
 The wavelength precision and transmittance of the device are affected by several factors. 
 The first factor is the consistency of the internal structure of the product.
-During the implementation and testing process, it was shown that checking or opening the casing for each repair causes a shift in the component. 
-Different lamp position causes other components to block part of the light, causes reduced in intensity for the sample.
+During the implementation and testing process, it was shown that for each adjustment done for troubleshooting causes a shift in the component. 
+Light pathway obscured by other components cause a reduction in the light intensity which passes through the sample.
 
 From several tests, the treatment of the indium-tin oxide (ITO) coated glass layer (which has been coated with silicon oil and parafilm) also produces a different level of precision. 
 ITO glass should have a holder, for example, given a casing with a clamp. 
-This way, the light path length is constant. Other than that, the droplet's shape, which tends to be convex at the top, can cause a lens effect\cite{b5}.
+This way, the light path length is constant. Other than that, the droplet's shape, which tends to be convex at the top, can cause lensing effect\cite{b5}.
     
 \subsection{Resolution}
 Resolution testing is carried out by calculating the resolution of the measurement results stored on an external SD card in the form of a CSV file.
@@ -315,13 +320,12 @@ The absorbance measurement results are stored on an external SD card with a reso
     \end{equation}
 
 \subsection{Weight and Size}
-Weight measurement is done by placing the device on a digital scale.
-The device's weight is 0.832 kilograms. 
-The final dimension of the spectrophotometer are 120 x 131 x 207 mm, as shown in Fig. \ref{device_dimensions}
+Weight measurement is done by placing the device on a digital scale which shows the weight of 0.832 kilograms. 
+The final dimension of the spectrophotometer are 120 x 131 x 207 mmˆ3, as shown in Fig. \ref{device_dimensions}
 Device's dimensions are affected by the number of components used in the system and the optical configuration used. 
 The sensor's location, diffraction grating, and light source mainly influence the device's height. 
-The battery has a size of 70 x 42 x 21 mm, which significantly affects the determination of the minimum area of the base.
-In addition, the button component with a diagonal position uses a large enough area but leaves quite a lot of remaining space.
+The battery has a size of 70 x 42 x 21 mmˆ3, which significantly affects the determination of the minimum area of the base.
+In addition, the button component with a diagonal position uses a large enough area but leaves some empty space.
 
 \begin{figure}[htbp]
     \centerline{\includegraphics[scale=0.25]{SCTP_size.png}}
@@ -338,29 +342,30 @@ Fig. \ref{lcd-spec} illustrates how the result and spectrum page of the absorban
 
     \begin{figure}[htbp]
     \centerline{\includegraphics[scale=0.06]{lcd-spec.png}}
-    \caption{The display of the result pages of a spectrum-mode measurement}
+    \caption{The display of the result (left) and spectrum (right) page of a spectrum-mode measurement}
     \label{lcd-spec}
     \end{figure}
 
-Quantization-mode measurement starts with a page that displays the list of saved curves.
-Users have the option of using, removing, or adding new curves.
+Quantization-mode measurement starts with a display page that shows the list of saved curves.
+Users have the option of using, removing, or adding new curve data.
 The user will get a table page if they select an existing curve.
 The table consists of concentration and absorbance values of standard samples, as shown in the left side of Fig. \ref{lcd-conc}.
 By moving the pointer to the desired absorbance (A) cell and clicking the OK physical button, an absorbance measurement for each concentration value should be made.
 The user will be directed to the blank and sample input page.
 The user should click the REGRESS button to calculate the concentration of the unknown sample and view the standard curve plot (Fig. \ref{lcd-conc}).
+Each curve can store up to 10 sets of concentration and absorbance values.
 
     \begin{figure}[htbp]
     \centerline{\includegraphics[scale=0.06]{lcd-conc.png}}
-    \caption{The display of the table and plot page of a quantization-mode curve}
+    \caption{The display of the table (left) and plot (right) page of a quantization-mode curve}
     \label{lcd-conc}
     \end{figure}
 
 \section{Conclusions}
-To support the study of spectrophotometry analysis in DMF platform, we have proposed the assembly of a portable visible spectrophotometer that can be integrated with a particular DMF system.
+To support the study of spectrophotometry analysis in DMF platform, we have designed and assembled of a portable visible spectrophotometer that can be integrated with a particular DMF system.
 Data acquisition, storage, and user experience is made simpler by our developed portable visible spectrophotometer and a user-friendly interface.
 Measurement's accuracy of red, yellow, and blue food dyes and its repeatability demonstrated good performances in experimental validation versus commercial spectrophotometer (Evolution 220 UV-Visible, Thermo Scientific™).
-The colorimetric glucose assay (maximum of absorbance at 540 nm) measurements were comparable but quite inferior; these issues could be resolved by retesting the colorimetric reactions more thoroughly.
+The colorimetric glucose assay (maximum of absorbance at 540 nm) measurements were comparable at certain degree but quite inferior; these issues could be resolved by retesting the colorimetric reactions more thoroughly.
 Future work will focus on designing a better voltage regulation and heat insulation for the lamp, as well as reducing movable parts from the light path configuration.
 
 \section*{Acknowledgement}
