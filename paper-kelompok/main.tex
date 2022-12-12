@@ -54,9 +54,15 @@ The device had a transmittance repeatability of ±2.58\% and wavelength repeatab
 
 % Pendahuluan
 \section{Introduction}
-Currently, various methods detect and measure glucose concentrations in food matrices.
+The clinical diagnosis of metabolic diseases, such as diabetes mellitus, highly depends on the measurement of glucose in body fluid.
+The number of people suffering from diabetes is rising, and there is over 1 in 10 adults are affected worldwide.
+By 2045, 780 million people worldwide are predicted to live with diabetes\cite{b1}.
+Diabetes patients are at a higher risk of critical health problems than non-diabetic individuals.
+As a result, accurate monitoring of blood glucose concentrations in diabetic patients is crucial for real-time diabetes diagnosis.
+
+Currently, various methods detect and measure glucose concentrations.
 These methods can be broadly grouped into two main categories: enzymatic approaches, such as spectrophotometric assays; and non-enzymatic approaches, such as HPLC systems.
-While the first group is glucose specific, the latter is broadly adaptable and can be used to detect not only glucose but a wide variety of other carbohydrates as well\cite{b1}.
+While the first group is glucose specific, the latter is broadly adaptable and can be used to detect not only glucose but a wide variety of other carbohydrates as well\cite{b2}.
 However, the spectrophotometric test is becoming a more commonly used method for glucose detection because of its ability to detect in a shorter time and at a lower cost.
 Spectrophotometric tests utilize the light transmitted or reflected by a sample to perform qualitative and quantitative analysis.
 For qualitative analysis, the light transmitted by a sample has a unique spectrum based on the atoms or molecules contained in the sample.  
@@ -65,14 +71,14 @@ Meanwhile, for quantitative analysis, the absorbance level of the sample for a s
 Glucose spectrophotometry test includes colorimetric measurement methods, namely measurements that involve changing the color of the sample to measure quantities such as absorbance and sample concentration.
 Various colorimetric methods involving reactions with different enzymes for glucose measurement are the object of research being developed to obtain colorimetric methods that are accurate, sensitive, selective, and inexpensive.
 There are several enzymes that take glucose as a substrate and turn it into a product or byproduct that can be measured or detected.
-In particular, the development of spectrophotometric and colorimetric glucose assays has taken advantage of the activities of glucose oxidase and hexokinase enzyme\cite{b1}.
+In particular, the development of spectrophotometric and colorimetric glucose assays has taken advantage of the activities of glucose oxidase and hexokinase enzyme\cite{b2}.
 Several approaches were studied to develop a colorimetric glucose biosensor by using glucose oxidase (GOx) to oxidize glucose to gluconic acid and hydrogen peroxide ($H_2O_2$).
-In colorimetric assays, studies revealed that the Horseradish Peroxidase (HRP) enzyme could catalyze the reaction of H2O2 and organic substrates such as 3,3',5,5'-tetramethylbenzidine (TMB) to produce visible colors\cite{b2}. 
+In colorimetric assays, studies revealed that the Horseradish Peroxidase (HRP) enzyme could catalyze the reaction of H2O2 and organic substrates such as 3,3',5,5'-tetramethylbenzidine (TMB) to produce visible colors\cite{b3}. 
 
-Microfluidics offer several advantages for glucose analysis, such as reduced sample and reagent consumption, faster analysis, portability, and high compatibility with multiplexing detection means\cite{b3,b4}.
+Microfluidics offer several advantages for glucose analysis, such as reduced sample and reagent consumption, faster analysis, portability, and high compatibility with multiplexing detection means\cite{b4,b5}.
 One application called digital microfluidics (DMF) has a promising potential to operate microdroplets in portable analytical systems.
-The platform is based on the droplet manipulation using electrowetting-on-dielectric (EWOD) principle which applies electric potential to the control electrodes coated with a hydrophobic dielectric\cite{b3}.
-The DMF system mainly consists of a fluid layer located between the top and bottom plates. Nowadays, DMF technology is commonly used for various processes which include sample preparation and diagnostics\cite{b5}.
+The platform is based on the droplet manipulation using electrowetting-on-dielectric (EWOD) principle which applies electric potential to the control electrodes coated with a hydrophobic dielectric\cite{b4}.
+The DMF system mainly consists of a fluid layer located between the top and bottom plates. Nowadays, DMF technology is commonly used for various processes which include sample preparation and diagnostics\cite{b6}.
 Droplet mixing allows chemical reactions to be done on chip. An optical detection system needs to be developed in order to measure the absorbance and concentration of a glucose droplet on the DMF chip. 
 
 In this study, we present the development of a portable visible spectrophotometer, which is detachable to DMF platforms.
@@ -154,7 +160,7 @@ The absorbance $A$ of a particular sample is computed by the Equation (\ref{abso
 
 Transmittance $T$ is the percentage of incident radiation that the sample transmits, $I_0$ denotes the intensity of polychromatic light entering the sample, and $I$ denotes the intensity of light leaving the sample;
 Absorbance is directly proportional to the path length $l$ through the medium and the concentration $c$ of the absorbing substance for monochromatic radiation.
-Beer-Lambert's law, expressed in Equation (\ref{beer-lambert}), serves as the basis for quantitative analyses using both atomic and molecular absorption measurements ($\epsilon$) is the molar attenuation coefficient)\cite{b6}.
+Beer-Lambert's law, expressed in Equation (\ref{beer-lambert}), serves as the basis for quantitative analyses using both atomic and molecular absorption measurements ($\epsilon$) is the molar attenuation coefficient)\cite{b7}.
 
     \begin{equation}
     A={\epsilon}{l}{c}
@@ -195,7 +201,7 @@ The configuration of buttons and non-touchscreen LCD is chosen because it fits t
 
 \subsection{Power Subsystem}
 The power subsystem enables the system to be activated by supplying power from the battery to the entire electrical circuit. 
-The battery can be recharged with a 12V adapter whenever the battery voltage is insufficient. 
+The battery can be recharged with a 12 V adapter whenever the battery voltage is insufficient. 
 The power subsystem also provides information about the battery voltage value to be displayed to the user. 
 
 \begin{figure}[htbp]
@@ -204,8 +210,8 @@ The power subsystem also provides information about the battery voltage value to
     \label{power-dfd}
     \end{figure}
 
-The power from the adapter is converted into 8.4V (full capacity) using a charging module when charging is needed.
-The power subsystem is activated when the user presses the power button for the first time—allowing the 8.4V to flow from the battery or the adapter(when charging) to the DC step-down module, giving 6V output to the microcontroller and other loads. 
+The power from the adapter is converted into 8.4 V (full capacity) using a charging module when charging is needed.
+The power subsystem is activated when the user presses the power button for the first time—allowing the 8.4 V to flow from the battery or the adapter(when charging) to the DC step-down module, giving 6 V output to the microcontroller and other loads. 
 If the battery voltage value is below the threshold or the user presses the power button again, the power supply to the entire circuit will be cut off, and the system will be disabled.
 
 \subsection{Hardware Assembly}
@@ -223,7 +229,7 @@ Electronic parts like printed circuit boards (PCBs) and optical parts were place
 
 \section{Results and Discussion}
 \subsection{Accuracy}
-Glucose samples were prepared using a glucose assay kit (Glucose (GO) Assay Kit, Sigma-Aldrich\cite{b7}) with concentration of 40 {\textmu}g/ml and 60 {\textmu}g/ml.
+Glucose samples were prepared using a glucose assay kit (Glucose (GO) Assay Kit, Sigma-Aldrich\cite{b8}) with concentration of 40 {\textmu}g/ml and 60 {\textmu}g/ml.
 The resulting liquid was then placed between two microscope slides spaced 0.5 mm apart to mimic the light path of the DMF cartridge.
 
 Fig.~\ref{glucose_result} shows the measurement results of the glucose experiment with baseline correction using linear regression.
@@ -372,13 +378,14 @@ The authors thank Dr. Isa Anshori, from Department of Biomedical Engineering, an
 This work was funded by the Department of Electrical Engineering, Institut Teknologi Bandung.
 
 \begin{thebibliography}{00}
-\bibitem{b1} A. L. Galant, R. C. Kaufman, and J. D. Wilson, “Glucose: Detection and analysis,” Food Chemistry, vol. 188, pp. 149–160, 2015. 
-\bibitem{b2} H. V. Tran et al., “Silver nanoparticles-decorated reduced graphene oxide: A novel peroxidase-like activity nanomaterial for development of a colorimetric glucose biosensor,” Arabian Journal of Chemistry, vol. 13, no. 7, pp. 6084–6091, Jul. 2020, doi: 10.1016/j.arabjc.2020.05.008.
-\bibitem{b3} Z. Gu, M. L. Wu, B. Y. Yan, H. F. Wang, and C. Kong, “Integrated Digital Microfluidic Platform for Colorimetric Sensing of Nitrite,” ACS Omega, vol. 5, no. 19, pp. 11196–11201, May 2020, doi: 10.1021/acsomega.0c01274.
-\bibitem{b4} R. B. Fair, A. Khlystov, V. Srinivasan, V. K. Pamula, and K. N. Weaver, “Integrated Chemical/biochemical sample collection, pre-concentration, and analysis on a digital microfluidic lab-on-a-chip platform,” SPIE Proceedings, 2004. 
-\bibitem{b5} S. Huang and R. B. Fair, “Quantitative measurements of inorganic analytes on a digital microfluidics platform,” SN Applied Sciences, vol. 1, no. 12, Dec. 2019, doi: 10.1007/s42452-019-1693-8.
-\bibitem{b6} D. A. Skoog, F. J. Holler, and S. R. Crouch, Principles of Instrumental Analysis, 7th ed. Cengage Learning, 2016.
-\bibitem{b7} B. E. Raabo and T. C. Terkildsen, “On the enzymatic determination of blood glucose,” Scandinavian Journal of Clinical and Laboratory Investigation, vol. 12, no. 4, pp. 402–407, 1960. 
+\bibitem{b1} “IDF Diabetes Atlas Tenth edition.” [Online]. Available: https://diabetesatlas.org/. [Accessed: 12-Dec-2022]. 
+\bibitem{b2} A. L. Galant, R. C. Kaufman, and J. D. Wilson, “Glucose: Detection and analysis,” Food Chemistry, vol. 188, pp. 149–160, 2015. 
+\bibitem{b3} H. V. Tran et al., “Silver nanoparticles-decorated reduced graphene oxide: A novel peroxidase-like activity nanomaterial for development of a colorimetric glucose biosensor,” Arabian Journal of Chemistry, vol. 13, no. 7, pp. 6084–6091, Jul. 2020, doi: 10.1016/j.arabjc.2020.05.008.
+\bibitem{b4} Z. Gu, M. L. Wu, B. Y. Yan, H. F. Wang, and C. Kong, “Integrated Digital Microfluidic Platform for Colorimetric Sensing of Nitrite,” ACS Omega, vol. 5, no. 19, pp. 11196–11201, May 2020, doi: 10.1021/acsomega.0c01274.
+\bibitem{b5} R. B. Fair, A. Khlystov, V. Srinivasan, V. K. Pamula, and K. N. Weaver, “Integrated Chemical/biochemical sample collection, pre-concentration, and analysis on a digital microfluidic lab-on-a-chip platform,” SPIE Proceedings, 2004. 
+\bibitem{b6} S. Huang and R. B. Fair, “Quantitative measurements of inorganic analytes on a digital microfluidics platform,” SN Applied Sciences, vol. 1, no. 12, Dec. 2019, doi: 10.1007/s42452-019-1693-8.
+\bibitem{b7} D. A. Skoog, F. J. Holler, and S. R. Crouch, Principles of Instrumental Analysis, 7th ed. Cengage Learning, 2016.
+\bibitem{b8} B. E. Raabo and T. C. Terkildsen, “On the enzymatic determination of blood glucose,” Scandinavian Journal of Clinical and Laboratory Investigation, vol. 12, no. 4, pp. 402–407, 1960. 
 \end{thebibliography}
 
 \end{document}
