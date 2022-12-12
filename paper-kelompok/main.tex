@@ -41,10 +41,10 @@ Bandung, Indonesia \\
 \begin{abstract}
 We propose a portable visible spectrophotometer with an ability to integrate with a digital microfluidic (DMF) system.
 An interface which consists of an LCD and a set of buttons allows users to gather and view measurement results in a continous manner.
-The device had a dimension of 120 x 131 x 207 mmˆ3 with the weight of 0.832 kg.
+The device had a dimension of 120 x 131 x 207 mm\textsuperscript{3} with the weight of 0.832 kg.
 The device measured absorbance in the wavelength range of 400 to 700 nm with a resolution of 0.77 nm.
 The device was tested by assessing the accuracy and repeatability of the transmission and wavelength measurements, as well as the wavelength resolution.
-The transmittance RMSE was ±11.22\% with ±9.88 nm wavelength error.
+The transmittance error was ±11.22\% with ±9.88 nm wavelength error.
 The device had a transmittance repeatability of ±2.58\% and wavelength repeatability of ±0.63 nm.
 \end{abstract}
 
@@ -94,7 +94,7 @@ The spectrophotometer was designed to satisfy several features as follows:
     \item Able to work in visible spectrum (400 nm to 700 nm) 
     \item Able to be integrated with a digital microfluidic platform 
     \item The measurement results can be displayed on an LCD and stored 
-    \item Portable (should be smaller than 420 x 300 x 180 mmˆ3 and weighs less than 2 kg)
+    \item Portable (should be smaller than 420 x 300 x 180 mm\textsuperscript{3} and weighs less than 2 kg)
 \end{itemize}
 
 \section{Materials and Methods}
@@ -236,7 +236,7 @@ Fig.~\ref{glucose_result} shows the measurement results of the glucose experimen
 Manual baseline correction was found necessary because of a voltage fluctuation found between blank measurement and sample measurement.
 Value of 0.155 peak absorbance were detected at 519 nm for 40 {\textmu}g/ml and 0.079 at 526 nm for 60 {\textmu}g/ml.
 Absorbance for the 40 {\textmu}g/ml sample turned out higher than the 60 {\textmu}g/ml sample.
-This result does not fit the absorbance-concentration relation of the Beer-Lambert law.
+This result does not fit the absorbance-concentration relation of the Beer-Lambert's law.
 It was also observed that the 40 {\textmu}g/ml sample appeared darker for the naked eye.
 Thus, a retest of the chemical reactions was due.
 
@@ -248,7 +248,7 @@ Thus, a retest of the chemical reactions was due.
 
 Aside from glucose, we have tested the spectrophotometer with food dye measurements.
 Blue (630 nm peak), red (508 nm peak), and yellow (427 nm peak) food dyes were mixed with water.
-The volume percentage used were 0.033\%, 0.040\%, 0.050\%, and 0.067\%.
+The volume percentages used were 0.033\%, 0.040\%, 0.050\%, and 0.067\%.
 The device's measurements are shown in Fig. \ref{dye_res}.
 The device's measured transmittance spectra was compared to the transmittance spectra from a commercial spectrophotometer (Evolution 220 UV-Visible, Thermo Scientific™).
 The average transmittance spectrum RMSE obtained was 11.22\%.
@@ -262,14 +262,14 @@ In other words, the sensor deemed the blank (water) darker than the sample.
 This could happen when the intensity from the light source was darker for the blank than the sample.
 The voltage log confirmed this hypothesis.
 A blank measurement took longer time than a sample measurement.
-The longer a measurement took time, the lower the power dropped, and the lower the intensity was read.
+The longer a measurement took time, the lower the power dropped, hence the lower the intensity became.
 
 The significant increase of the peak wavelength error for the yellow dye was caused by the spectrum response of the system.
 The yellow dye was evaluated at its peak absorbance wavelength of 427 nm.
-The pixel spectrum response in 400 nm is 45\% the spectrum response in 550 nm.
-Moreover, the lamp emission in 400 nm is 50\% the lamp emission in 700 nm.
-These effeciency drops caused low intensity readouts for blank measurements, which increased resolution and noise in lower wavelengths.
-Increasing the lamp power was not an option because the heat would damage the plastic structures of the light path. 
+The pixel spectrum response in 400 nm is 45\% the response in 550 nm.
+Moreover, the lamp emission in 400 nm is 50\% the emission in 700 nm.
+These effeciency drops caused low intensity readouts, which increased resolution and noise in lower wavelengths (400 to 450 nm).
+Increasing the lamp power was not an option because the heat would damage the plastic structures of the light path.
 
 \begin{figure}[htbp]
     \centerline{\includegraphics[scale=0.6]{dye-res.png}}
@@ -279,10 +279,8 @@ Increasing the lamp power was not an option because the heat would damage the pl
     \end{figure}
 
 Measurements of the food dye samples were regressed as shown in Fig. \ref{dye_res} to create standard curves.
-The wavelengths of which the absorbance were measured were the peak absorbances of each dye.
-An upward trend was found in accordance to the Beer-Lambert law.
-The coefficient of determination measured decreased as the wavelength decreased.
-Accuracy was expected to decrease as wavelength decreases due to weakening lamp emission and camera spectrum response at low wavelengths.
+The wavelengths of which the absorbances were measured were the peak absorbances of each dye.
+An upward trend was found in accordance to the Beer-Lambert's law.
 
 \subsection{Repeatability}
 
@@ -298,7 +296,7 @@ The transmittance's standard deviation at 540 nm is 4.09\%.
 
 Based on Fig. \ref{glucose_peak_wavelength}, out of 10 measurement iterations, the maximum peak wavelength occurs at 521.76 nm, with the minimum peak wavelength at 519.46 nm.
 On average, the peak wavelength that occurs is 521.07 nm, indicated by a black line on the graph.
-From this data, the standard deviation of the average wavelength is at 0.63 nm, with a minimum deviation of 0.69 nm and a minimum deviation of 1.61 nm.
+From this data, the average wavelength standard deviation is at 0.63 nm, with a minimum deviation of 0.69 nm and a maximum deviation of 1.61 nm.
 
 \begin{figure}[htbp]
     \centerline{\includegraphics[scale=0.5]{glucose_peakwavelength.png}}
@@ -308,13 +306,14 @@ From this data, the standard deviation of the average wavelength is at 0.63 nm, 
 
 The wavelength precision and transmittance of the device are affected by several factors. 
 The first factor is the consistency of the internal structure of the product.
-During the implementation and testing process, it was shown that for each adjustment done for troubleshooting causes a shift in the component. 
-Light pathway obscured by other components cause a reduction in the light intensity which passes through the sample.
+During the implementation and testing process, it was shown that checking or opening the casing for each for each adjustment done for troubleshooting causes a shift in the component. 
+Light pathway obscured by other components cause a reduction in the light intensity which pass through the sample.
 
-From several tests, the treatment of the indium-tin oxide (ITO) coated glass layer (which has been coated with silicon oil and parafilm) also produces a different level of precision. 
+From several tests, the treatment of the ITO glass layer (which has been coated with silicon oil and parafilm) also produces a different level of precision. 
 ITO glass should have a holder, for example, given a casing with a clamp. 
-This way, the light path length is constant. Other than that, the droplet's shape, which tends to be convex at the top, can cause lensing effect\cite{b5}.
-    
+This way, the light path length is constant. Other than that, the droplet's shape, which tends to be convex at the top, can cause lensing effect\cite{b3}.
+
+
 \subsection{Resolution}
 Resolution testing is carried out by calculating the resolution of the measurement results stored on an external SD card in the form of a CSV file.
 The number of pixels needed for the absorbance spectrum measurement, which is obtained from the calibration results, was 297.
@@ -326,11 +325,11 @@ The absorbance measurement results are stored on an external SD card with a reso
     \end{equation}
 
 \subsection{Weight and Size}
-Weight measurement is done by placing the device on a digital scale which shows the weight of 0.832 kilograms. 
-The final dimension of the spectrophotometer are 120 x 131 x 207 mmˆ3, as shown in Fig. \ref{device_dimensions}
+Weight measurement is done by placing the device on a digital scale which shows the weight is 0.832 kilograms. 
+The final dimension of the spectrophotometer are 120 x 131 x 207 mm\textsuperscript{3}, as shown in Fig. \ref{device_dimensions}
 Device's dimensions are affected by the number of components used in the system and the optical configuration used. 
 The sensor's location, diffraction grating, and light source mainly influence the device's height. 
-The battery has a size of 70 x 42 x 21 mmˆ3, which significantly affects the determination of the minimum area of the base.
+The battery has a size of 70 x 42 x 21 mm\textsuperscript{3}, which significantly affects the determination of the minimum area of the base.
 In addition, the button component with a diagonal position uses a large enough area but leaves some empty space.
 
 \begin{figure}[htbp]
